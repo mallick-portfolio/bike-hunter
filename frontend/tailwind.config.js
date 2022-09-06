@@ -32,6 +32,7 @@ module.exports = {
       boxShadow: {
         "3xl": "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",
         menu: "0 0 10px 0 rgb(0 0 0 / 70%)",
+        "4xl": "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;",
       },
     },
   },
