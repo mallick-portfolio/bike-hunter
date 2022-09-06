@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase.js";
+import { signOut } from "firebase/auth";
+import Loading from "./Loading.jsx";
 const Header = () => {
+  const [user, loading] = useAuthState(auth);
   const [show, setShow] = useState(false);
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="header-container">
       <div>
@@ -24,12 +32,15 @@ const Header = () => {
         </div>
         <div className="hidden lg:flex">
           <ul className="flex items-center gap-6">
-            <li className="common-btn">
-              <Link to={"/login"}>Login</Link>
-            </li>
-            <li className="common-btn">
-              <Link to={"/register"}>Sign Up</Link>
-            </li>
+            {user?.email ? (
+              <li className="common-btn">
+                <button onClick={() => signOut(auth)}>Sign Out</button>
+              </li>
+            ) : (
+              <li className="common-btn">
+                <Link to={"/login"}>Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="flex lg:hidden">

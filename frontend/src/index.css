@@ -17,13 +17,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.register {
-  background-image: url("https://i.ibb.co/0n0w6kD/register.jpg");
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 120px 0;
-  position: relative;
-}
+
 @layer components {
   .common-btn {
     @apply px-4 py-2 md:px-6 text-primary font-medium rounded-lg bg-btn shadow-3xl cursor-pointer hover:bg-btnHover hover:text-white hover:transition-all hover:duration-500 hover:-translate-y-1;
@@ -34,6 +28,9 @@ code {
 }
 
 @layer utilities {
+  .go-home {
+    @apply absolute top-8 left-8
+  }
   .prev-btn {
     @apply text-center text-primary sm:flex justify-center items-center text-xl sm:text-2xl absolute top-1/2 left-4 -translate-y-1/2 z-30 rounded-full w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 border-2 border-primary cursor-pointer hover:ring hover:ring-offset-2 duration-500 ring-primary;
   }
@@ -71,16 +68,16 @@ code {
     @apply flex justify-between items-center pr-2;
   }
   .login-container {
-    @apply h-full w-full sm:h-screen sm:w-screen flex flex-col justify-center items-center register;
+    @apply h-full w-full sm:h-screen sm:w-screen flex flex-col justify-center items-center;
   }
   .login-form {
-    @apply px-4 py-3 mx-4 sm:mx-0 sm:px-24 sm:py-6 bg-white rounded-lg;
+    @apply px-4 py-3 mx-4 sm:mx-0 sm:px-24 rounded-lg sm:py-6 bg-btn shadow-3xl;
   }
   .form-title {
     @apply text-xl font-semibold text-primary md:text-2xl lg:text-4xl text-center;
   }
   .form-social-flex {
-    @apply flex flex-col sm:flex-row gap-4 justify-center items-center py-4;
+    @apply flex flex-col sm:flex-row gap-4 justify-center items-center py-2;
   }
   .social-github {
     @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 bg-[#3b5998] rounded-md flex gap-2 items-center;
@@ -96,5 +93,11 @@ code {
   }
   .form-submit {
     @apply w-full bg-primary border hover:border-primary hover:bg-white hover:text-primary transition-all duration-500 rounded-md  py-2 lg:py-3 text-white cursor-pointer text-lg sm:text-xl;
+  }
+  .form-label {
+    @apply last:text-sm lg:text-lg font-semibold text-primary;
+  }
+  .form-input {
+    @apply w-full shadow-3xl rounded-md h-10 lg:h-12 focus:outline-none focus:border-2 focus:border-primary pl-4;
   }
 }

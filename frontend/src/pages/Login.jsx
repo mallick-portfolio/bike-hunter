@@ -30,7 +30,7 @@ const Login = () => {
   }, [githubUser, googleUser, navigate, user]);
   useEffect(() => {
     if (error || googleError || githubError) {
-      toast.warning("Your Email or Password is not Correct");
+      toast.warning("Authentication Failed");
       return navigate("/login");
     }
   }, [error, githubError, googleError, navigate]);
@@ -43,6 +43,9 @@ const Login = () => {
   };
   return (
     <div className="login-container">
+      <button className="common-btn go-home">
+        <Link to={"/"}>Go Home</Link>
+      </button>
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <h2 className="form-title">Sign In With</h2>
         <div className="form-social-flex">
@@ -77,7 +80,7 @@ const Login = () => {
         <p className="text-lg mt-2">
           Don't Have an Account.{" "}
           <Link to={"/register"}>
-            <span className="text-secondary">Register Now</span>
+            <span className="text-primary">Register Now</span>
           </Link>
         </p>
       </form>

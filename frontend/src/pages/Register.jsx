@@ -37,15 +37,12 @@ const Register = () => {
       navigate("/home");
     }
   }, [GitUser, googleUser, navigate, user]);
-  if (error || updateError || googleError || GitError) {
-    return (
-      <div>
-        <p>
-          Error: {error.message || updateError.message || googleError.message}
-        </p>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (error || updateError || googleError || GitError) {
+      toast("Sign Up failed");
+      navigate("/register");
+    }
+  }, [GitError, error, googleError, navigate, updateError]);
   if (loading || updating || googleLoading || GitLoading) {
     return <Loading />;
   }
@@ -58,6 +55,9 @@ const Register = () => {
 
   return (
     <div className="login-container">
+      <button className="common-btn go-home">
+        <Link to={"/"}>Go Home</Link>
+      </button>
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <h2 className="form-title">Sign In With</h2>
         <div className="form-social-flex">
@@ -116,7 +116,7 @@ const Register = () => {
               required: true,
               validate: (val) => {
                 if (watch("password") !== val) {
-                  return "Your passwords do no match";
+                  return "Authentication Failed";
                 }
               },
             })}
@@ -136,7 +136,7 @@ const Register = () => {
         <p className="text-lg mt-2">
           Don't Have an Account.{" "}
           <Link to={"/login"}>
-            <span className="text-secondary">Login Now</span>
+            <span className="text-primary">Login Now</span>
           </Link>
         </p>
       </form>
