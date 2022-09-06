@@ -34,8 +34,8 @@ const HomeBanner = () => {
               padding: "80px 0",
             }}
           >
-            <div className="container relative z-20 flex items-center">
-              <div className="w-full md:w-1/2 px-8 text-white">
+            <div className="container relative z-20 flex flex-col lg:flex-row items-center">
+              <div className="w-full lg:w-1/2 px-8 text-white">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   Driving a <br />{" "}
                   <span className="text-primary">Motorcycle</span> is like
@@ -61,10 +61,11 @@ const HomeBanner = () => {
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
               padding: "80px 0",
+              backgroundPosition: "center center",
             }}
           >
-            <div className="container relative z-20 flex items-center">
-              <div className="w-full md:w-1/2 px-8 text-white">
+            <div className="container relative z-20 flex flex-col lg:flex-row items-center">
+              <div className="w-full lg:w-1/2 px-8 text-white">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
                   Driving a <br />{" "}
                   <span className="text-primary">Motorcycle</span> is like
@@ -94,24 +95,5 @@ const HomeBanner = () => {
   );
 };
 
-const items = [
-  {
-    _id: 1,
-    title: "Discount Up To 40% Off",
-    span: "Motorcycle",
-    subtitle:
-      "I really love to ride my motorcycle. When I want to just get away and be by myself and clear my head, that's what I do.",
-    img: banner1,
-    bgimg: banner3,
-  },
-  {
-    _id: 2,
-    title: "Discount Up To 40% Off",
-    span: "Motorcycle",
-    subtitle:
-      "I really love to ride my motorcycle. When I want to just get away and be by myself and clear my head, that's what I do.",
-    img: banner2,
-    bgimg: banner4,
-  },
-];
+
 export default HomeBanner;
