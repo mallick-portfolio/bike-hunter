@@ -16,7 +16,9 @@ const Header = () => {
     <div className="header-container">
       <div>
         <h1 className="text-2xl font-medium text-primary">
-          Bike <span className="text-bodyWhite">Hunter</span>
+          <Link to="/">
+            Bike <span className="text-bodyWhite cursor-pointer">Hunter</span>
+          </Link>
         </h1>
       </div>
       <div className="menu">
@@ -59,7 +61,10 @@ const Header = () => {
           <div className="menu-head">
             <div className="mobile-logo-area">
               <h1 className="text-2xl font-medium text-primary">
-                Bike <span className="text-bodyWhite">Hunter</span>
+                <Link to="/">
+                  Bike{" "}
+                  <span className="text-bodyWhite cursor-pointer">Hunter</span>
+                </Link>
               </h1>
               <button onClick={() => setShow(!show)}>
                 <FontAwesomeIcon className="xicon" icon={faXmark} />

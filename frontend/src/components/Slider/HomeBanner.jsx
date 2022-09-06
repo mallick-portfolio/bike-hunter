@@ -27,21 +27,21 @@ const HomeBanner = () => {
       >
         <SwiperSlide>
           <div
-            className="relative after:absolute after:left-0 after:top-0 after:bottom-0 z-10 after:right-0 after:bg-menu"
+            className="banner-area"
             style={{
               background: `url(${banner3})`,
               backgroundSize: "cover",
               padding: "80px 0",
             }}
           >
-            <div className="container relative z-20 flex flex-col lg:flex-row items-center">
-              <div className="w-full lg:w-1/2 px-8 text-white">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            <div className="banner-container">
+              <div className="banner-content">
+                <h1 className="banner-title">
                   Driving a <br />{" "}
                   <span className="text-primary">Motorcycle</span> is like
                   flying
                 </h1>
-                <h5 className="text-xl md:text-2xl mt-8">
+                <h5 className="banner-subtitle">
                   I really love to ride my motorcycle. When I want to just get
                   away and be by myself and clear my head, that's what I do.
                 </h5>
@@ -55,7 +55,7 @@ const HomeBanner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="relative after:absolute after:left-0 after:top-0 after:bottom-0 z-10 after:right-0 after:bg-menu"
+            className="banner-area"
             style={{
               background: `url(${banner4})`,
               backgroundRepeat: "no-repeat",
@@ -64,14 +64,14 @@ const HomeBanner = () => {
               backgroundPosition: "center center",
             }}
           >
-            <div className="container relative z-20 flex flex-col lg:flex-row items-center">
-              <div className="w-full lg:w-1/2 px-8 text-white">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
+            <div className="banner-container">
+              <div className="banner-content">
+                <h1 className="banner-title">
                   Driving a <br />{" "}
                   <span className="text-primary">Motorcycle</span> is like
                   flying
                 </h1>
-                <h5 className="text-xl md:text-2xl mt-8">
+                <h5 className="banner-subtitle">
                   I really love to ride my motorcycle. When I want to just get
                   away and be by myself and clear my head, that's what I do.
                 </h5>
@@ -94,6 +94,5 @@ const HomeBanner = () => {
     </div>
   );
 };
-
 
 export default HomeBanner;
