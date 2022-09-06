@@ -46,13 +46,16 @@ code {
 
 @layer components {
   .common-btn {
-    @apply px-4 py-2 md:px-6 text-primary font-medium rounded-lg bg-btn shadow-3xl cursor-pointer hover:bg-btnHover hover:text-white hover:transition-all hover:duration-500 hover:-translate-y-1;
+    @apply px-4 py-2 md:py-3 md:px-8 text-primary font-medium rounded-lg bg-btn shadow-3xl cursor-pointer hover:bg-btnHover hover:text-white hover:transition-all hover:duration-500 hover:-translate-y-1;
   }
   .common-btn2 {
     @apply px-4 py-2 sm:py-3 md:px-6 text-base text-white font-medium rounded-lg bg-primary cursor-pointer hover:bg-secondary hover:text-primary hover:transition-all hover:duration-500 hover:-translate-y-1;
   }
   .common-btn3 {
     @apply px-4 py-2 sm:py-4 md:px-8 text-base text-white font-medium rounded-lg bg-primary cursor-pointer hover:bg-btn hover:text-primary hover:transition-all hover:duration-500 hover:-translate-y-1;
+  }
+  .social-icon {
+    @apply bg-btn text-primary hover:bg-btnHover shadow-4xl hover:transition-all hover:duration-500 hover:text-white rounded-md w-12 h-12 flex justify-center pt-3 cursor-pointer;
   }
 }
 
@@ -145,12 +148,12 @@ code {
     @apply text-xl md:text-2xl mt-8;
   }
   .feature-container {
-    @apply container py-24 lg:py-28 flex flex-col lg:flex-row gap-6 items-center justify-between;
+    @apply container py-24 lg:py-28 flex flex-col lg:flex-row gap-8 items-center justify-between;
   }
   .feature-title {
     @apply text-lg lg:text-xl font-bold pt-6 pb-8;
   }
   .feature-card {
-    @apply w-full lg:w-1/2 px-8 py-12 rounded-xl shadow-3xl;
+    @apply w-full lg:w-1/2 px-8 py-12 rounded-xl shadow-xl;
   }
 }

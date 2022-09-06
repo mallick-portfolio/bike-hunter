@@ -55,8 +55,10 @@ const Register = () => {
 
   return (
     <div className="login-container">
-      <button className="common-btn go-home">
-        <Link to={"/"}>Go Home</Link>
+      <button>
+        <Link className="common-btn go-home" to={"/"}>
+          Go Home
+        </Link>
       </button>
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <h2 className="form-title">Sign In With</h2>

@@ -26,8 +26,10 @@ const Header = () => {
         <div className="hidden lg:flex">
           <ul className="desktop-ul">
             {menus.map((item) => (
-              <li key={item.id} className="nav-item">
-                <Link to={item.route}>{item.display}</Link>
+              <li key={item.id}>
+                <Link className="nav-item" to={item.route}>
+                  {item.display}
+                </Link>
               </li>
             ))}
           </ul>
@@ -39,8 +41,10 @@ const Header = () => {
                 <button onClick={() => signOut(auth)}>Sign Out</button>
               </li>
             ) : (
-              <li className="common-btn">
-                <Link to={"/login"}>Login</Link>
+              <li>
+                <Link className="common-btn" to={"/login"}>
+                  Login
+                </Link>
               </li>
             )}
           </ul>
@@ -72,8 +76,10 @@ const Header = () => {
             </div>
             <ul className="mobile-menu-ul">
               {menus.map((item) => (
-                <li key={item.id} className="mobile-nav-item">
-                  <Link to={item.route}>{item.display}</Link>
+                <li key={item.id}>
+                  <Link className="mobile-nav-item" to={item.route}>
+                    {item.display}
+                  </Link>
                 </li>
               ))}
             </ul>
