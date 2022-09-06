@@ -24,6 +24,7 @@ module.exports = {
         tcolor: "#A6A6A6",
         page: "#222",
         menu: "rgba(0, 0, 0, 0.7)",
+        menu2: "rgba(0, 0, 0, 0.8)",
       },
       backgroundImage: {
         btn: "linear-gradient(145deg, #e2e8ec, #ffffff)",
