@@ -7,14 +7,11 @@ import jacket from "../../assets/images/feature/jacket-4.png";
 import part from "../../assets/images/feature/part-1.png";
 const FeatureCategory = () => {
   return (
-    <div className="container py-24 lg:py-28 grid grid-cols-3 md:grid-cols-6 items-center gap-4 lg:gap-8">
+    <div className="feturecategroy-container">
       {category.map((cat) => (
-        <div
-          key={cat.id}
-          className="rounded-xl cursor-pointer bg-btn hover:bg-btnHover hover:duration-500 hover:transition-all text-primary hover:text-white shadow-4xl p-4"
-        >
+        <div key={cat.id} className="featurecategory-card">
           <img src={cat.image} alt="" />
-          <h4 className="text-center font-medium text-base">{cat.title}</h4>
+          <h4 className="featurecategory-title">{cat.title}</h4>
         </div>
       ))}
     </div>

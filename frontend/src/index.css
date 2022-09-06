@@ -175,15 +175,24 @@ code {
     @apply relative left-0 hover:left-3 hover:duration-500 hover:transition-all;
   }
   .discout {
-    @apply relative after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:bg-banner z-10
+    @apply relative after:absolute after:top-0 after:bottom-0 after:left-0 after:right-0 after:bg-banner z-10;
   }
   .discount-container {
-    @apply container relative z-20 text-center text-white
+    @apply container relative z-20 text-center text-white;
   }
   .discount-title {
-    @apply lg:text-5xl text-3xl font-semibold 
+    @apply lg:text-5xl text-3xl font-semibold;
   }
   .discount-subtitle {
-    @apply text-lg md:text-xl font-medium pt-4 pb-8
+    @apply text-lg md:text-xl font-medium pt-4 pb-8;
+  }
+  .feturecategroy-container {
+    @apply container pt-24 lg:pt-28 grid grid-cols-3 md:grid-cols-6 items-center gap-4 lg:gap-8;
+  }
+  .featurecategory-card {
+    @apply rounded-xl cursor-pointer bg-btn hover:bg-btnHover hover:duration-500 hover:transition-all text-primary hover:text-white shadow-4xl p-4;
+  }
+  .featurecategory-title {
+    @apply text-center font-medium text-base;
   }
 }
