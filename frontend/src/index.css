@@ -144,4 +144,13 @@ code {
   .banner-subtitle {
     @apply text-xl md:text-2xl mt-8;
   }
+  .feature-container {
+    @apply container py-24 lg:py-28 flex flex-col lg:flex-row gap-6 items-center justify-between;
+  }
+  .feature-title {
+    @apply text-lg lg:text-xl font-bold pt-6 pb-8;
+  }
+  .feature-card {
+    @apply w-full lg:w-1/2 px-8 py-12 rounded-xl shadow-3xl;
+  }
 }
