@@ -17,7 +17,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.register {
+  background-image: url("https://i.ibb.co/0n0w6kD/register.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 120px 0;
+  position: relative;
+}
 @layer components {
   .common-btn {
     @apply px-4 py-2 md:px-6 text-primary font-medium rounded-lg bg-btn shadow-3xl cursor-pointer hover:bg-btnHover hover:text-white hover:transition-all hover:duration-500 hover:-translate-y-1;
@@ -63,5 +69,32 @@ code {
   }
   .mobile-logo-area {
     @apply flex justify-between items-center pr-2;
+  }
+  .login-container {
+    @apply h-full w-full sm:h-screen sm:w-screen flex flex-col justify-center items-center register;
+  }
+  .login-form {
+    @apply px-4 py-3 mx-4 sm:mx-0 sm:px-24 sm:py-6 bg-white rounded-lg;
+  }
+  .form-title {
+    @apply text-xl font-semibold text-primary md:text-2xl lg:text-4xl text-center;
+  }
+  .form-social-flex {
+    @apply flex flex-col sm:flex-row gap-4 justify-center items-center py-4;
+  }
+  .social-github {
+    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 bg-[#3b5998] rounded-md flex gap-2 items-center;
+  }
+  .social-google {
+    @apply cursor-pointer w-full sm:w-auto px-4 sm:px-8 py-2 lg:py-4 shadow-3xl rounded-md flex gap-2 items-center;
+  }
+  .github-title {
+    @apply text-lg sm:text-xl font-semibold text-white;
+  }
+  .google-title {
+    @apply text-lg sm:text-xl font-semibold text-[#555555];
+  }
+  .form-submit {
+    @apply w-full bg-primary border hover:border-primary hover:bg-white hover:text-primary transition-all duration-500 rounded-md  py-2 lg:py-3 text-white cursor-pointer text-lg sm:text-xl;
   }
 }

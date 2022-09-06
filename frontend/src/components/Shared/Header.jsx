@@ -24,8 +24,12 @@ const Header = () => {
         </div>
         <div className="hidden lg:flex">
           <ul className="flex items-center gap-6">
-            <li className="common-btn">Login</li>
-            <li className="common-btn">Sign Up</li>
+            <li className="common-btn">
+              <Link to={"/login"}>Login</Link>
+            </li>
+            <li className="common-btn">
+              <Link to={"/register"}>Sign Up</Link>
+            </li>
           </ul>
         </div>
         <div className="flex lg:hidden">
