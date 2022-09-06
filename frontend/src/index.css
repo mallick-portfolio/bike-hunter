@@ -51,6 +51,9 @@ code {
   .common-btn2 {
     @apply px-4 py-2 sm:py-3 md:px-6 text-base text-white font-medium rounded-lg bg-primary cursor-pointer hover:bg-secondary hover:text-primary hover:transition-all hover:duration-500 hover:-translate-y-1;
   }
+  .common-btn3 {
+    @apply px-4 py-2 sm:py-4 md:px-8 text-base text-white font-medium rounded-lg bg-primary cursor-pointer hover:bg-btn hover:text-primary hover:transition-all hover:duration-500 hover:-translate-y-1;
+  }
 }
 
 @layer utilities {
@@ -133,7 +136,7 @@ code {
     @apply container relative z-20 flex flex-col lg:flex-row items-center;
   }
   .banner-content {
-    @apply w-full lg:w-1/2 px-8 text-white;
+    @apply w-full lg:w-1/2 pr-8 text-white;
   }
   .banner-title {
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold;

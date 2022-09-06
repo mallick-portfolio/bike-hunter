@@ -41,11 +41,11 @@ const HomeBanner = () => {
                   <span className="text-primary">Motorcycle</span> is like
                   flying
                 </h1>
-                <h5 className="banner-subtitle">
+                <h5 className="text-xl md:text-2xl mt-8">
                   I really love to ride my motorcycle. When I want to just get
                   away and be by myself and clear my head, that's what I do.
                 </h5>
-                <button className="common-btn2 mt-5">Buy Now</button>
+                <button className="common-btn3 mt-5">Buy Now</button>
               </div>
               <div className="w-full md:w-1/2 px-8">
                 <img src={banner1} alt="" />
@@ -75,7 +75,7 @@ const HomeBanner = () => {
                   I really love to ride my motorcycle. When I want to just get
                   away and be by myself and clear my head, that's what I do.
                 </h5>
-                <button className="common-btn2 mt-5">Buy Now</button>
+                <button className="common-btn3 mt-5">Buy Now</button>
               </div>
               <div className="w-full md:w-1/2 px-8">
                 <img src={banner2} alt="" />
