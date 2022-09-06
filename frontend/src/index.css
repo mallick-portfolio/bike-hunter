@@ -159,19 +159,19 @@ code {
   .footer-container {
     @apply container py-24 lg:py-28 border-t border-primary grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12;
   }
-  .footer-social-ul{
-    @apply flex items-center gap-1 md:gap-4
+  .footer-social-ul {
+    @apply flex items-center gap-1 md:gap-4;
   }
   .footer-subtitle {
-    @apply text-lg capitalize lg:text-xl font-semibold relative after:absolute after:w-12 after:h-0.5 after:bg-primary after:-bottom-1 after:left-0
+    @apply text-lg text-subtitle capitalize lg:text-xl font-semibold relative after:absolute after:w-12 after:h-0.5 after:bg-primary after:-bottom-1 after:left-0;
   }
-  .footer-item-ul{
-    @apply mt-6 flex flex-col gap-2
+  .footer-item-ul {
+    @apply mt-6 flex flex-col gap-2;
   }
   .footer-social-btn {
-    @apply text-base inline-block text-tertiary font-medium hover:text-primary hover:duration-500 hover:transition-all cursor-pointer
+    @apply text-base inline-block text-tertiary font-medium hover:text-primary hover:duration-500 hover:transition-all cursor-pointer;
   }
   .footer-item {
-    @apply relative left-0 hover:left-3 hover:duration-500 hover:transition-all
+    @apply relative left-0 hover:left-3 hover:duration-500 hover:transition-all;
   }
 }

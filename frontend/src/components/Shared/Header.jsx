@@ -64,7 +64,7 @@ const Header = () => {
         >
           <div className="menu-head">
             <div className="mobile-logo-area">
-              <h1 className="text-2xl font-medium text-primary">
+              <h1 className="text-2xl font-bold text-primary">
                 <Link to="/">
                   Bike{" "}
                   <span className="text-bodyWhite cursor-pointer">Hunter</span>

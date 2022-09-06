@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const FooterLogo = () => {
   return (
     <div>
-      <h3 className="text-2xl font-medium text-primary">
+      <h3 className="text-2xl font-bold text-primary">
         <Link to="/">
           Bike <span className="text-bodyWhite cursor-pointer">Hunter</span>
         </Link>
