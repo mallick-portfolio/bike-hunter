@@ -3,7 +3,7 @@ import StarRatings from "react-star-ratings";
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className=" sm:p-4 bg-btn shadow-3xl rounded-lg w-auto">
+    <div className="p-4 bg-btn shadow-3xl rounded-lg w-auto">
       <div className="">
         <p className="text-sm font-medium">{review?.des}</p>
         <div className="flex items-center py-4">

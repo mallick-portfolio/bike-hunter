@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
   return (
     <div className="products-item">
       <div className="product-img-div group">
-        <img className="single-product-img " src={product?.image} alt="" />
+        <img className="w-2/3 mx-auto py-2" src={product?.image} alt="" />
         <div className="product-hover-content">
           <div className="product-hover-icon">
             <AiOutlineEye className="text-xl" />

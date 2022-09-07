@@ -30,7 +30,7 @@ module.exports = {
       backgroundImage: {
         btn: "linear-gradient(145deg, #e2e8ec, #ffffff)",
         btnHover: "linear-gradient(145deg, #ff014f, #d11414)",
-        loader: "linear-gradient(90deg, #009fff, #ec2f4b)",
+        loader: "linear-gradient(90deg, #009fff, #ff014f)",
         
       },
       boxShadow: {

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const handleProduct = require("./routeHandler/handleProduct.js");
+const handleReview = require("./routeHandler/handleReview.js");
 
 const port = process.env.PORT || 5000;
 // middleware
@@ -19,6 +20,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/products", handleProduct);
+app.use("/reviews", handleReview);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
