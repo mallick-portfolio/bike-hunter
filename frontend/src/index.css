@@ -232,15 +232,15 @@ code {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-8;
   }
   .section-title {
-    @apply text-4xl font-semibold relative after:absolute after:h-1 after:right-0 after:bg-primary after:-bottom-2 after:left-0 inline-block before:absolute before:left-1/2 before:translate-x-1/2 before:-bottom-3 before:w-3 before:h-3 before:rotate-45 before:bg-primary
+    @apply text-4xl text-primary font-semibold relative after:absolute after:h-1 after:right-0 after:bg-primary after:-bottom-2 after:left-0 inline-block before:absolute before:left-1/2 before:translate-x-1/2 before:-bottom-3 before:rounded-sm before:w-3 before:h-3 before:rotate-45 before:bg-primary;
   }
   .section-container {
-    @apply container pt-24 lg:pt-28 relative z-10
+    @apply container pt-24 lg:pt-28 relative z-10;
   }
   .section-prev {
-    @apply mx-auto mt-1 rounded-full w-8 h-8 border-2 border-primary text-primary cursor-pointer
+    @apply mx-auto mt-1 rounded-full w-8 h-8 border-2 border-primary text-primary cursor-pointer;
   }
   .section-next {
-    @apply mx-auto mt-1 rounded-full w-8 h-8 border-2 border-primary text-primary cursor-pointer
+    @apply mx-auto mt-1 rounded-full w-8 h-8 border-2 border-primary text-primary cursor-pointer;
   }
 }

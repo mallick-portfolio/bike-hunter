@@ -12,7 +12,7 @@ const LatestProduct = ({ title }) => {
   const { loading, data: products } = useData(url);
   return (
     <div className="section-container">
-      <div className="text-left pb-12">
+      <div className="text-center pb-12">
         <h2 className="section-title">{title}</h2>
       </div>
       <div className="">

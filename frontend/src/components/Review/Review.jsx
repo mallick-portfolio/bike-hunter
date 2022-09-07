@@ -14,10 +14,13 @@ const Reviews = () => {
 
   return (
     <section className="container pb-24 lg:pb-28">
+      <div className="text-center pb-12">
+        <h2 className="section-title">Customer Review</h2>
+      </div>
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        
+        initialSlide={3}
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,
