@@ -7,6 +7,7 @@ import FeatureItem from "./FeatureItem.jsx";
 import HelmetBanner from "./HelmetBanner.jsx";
 import HomeProduct from "./HomeProduct.jsx";
 import LatestProduct from "./LatestProduct.jsx";
+import Summary from "./Summary.jsx";
 
 const Home = () => {
   return (
@@ -21,6 +22,8 @@ const Home = () => {
       <LatestProduct title="Best Sell" />
       <FeatureItem />
       <Reviews />
+      <DiscountBanner />
+      <Summary />
     </div>
   );
 };
