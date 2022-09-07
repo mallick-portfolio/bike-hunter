@@ -13,10 +13,11 @@ const Reviews = () => {
   const { loading, data: reviews } = useData(url);
 
   return (
-    <section className="container lg:py-12">
+    <section className="container pb-24 lg:pb-28">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
+        
         autoplay={{
           delay: 2000,
           disableOnInteraction: false,

@@ -1,21 +1,21 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 
-
 const ReviewCard = ({ review }) => {
-
   return (
-    <div className="card sm:p-4 card-compact text-accent w-auto bg-base-300 shadow-xl">
-      <div className="card-body">
-        <p className="text-sm">{review.des}</p>
+    <div className=" sm:p-4 bg-btn shadow-3xl rounded-lg w-auto">
+      <div className="">
+        <p className="text-sm">{review?.des}</p>
         <div className="flex items-center py-4">
           <div className="avatar">
-            <div className="w-14 rounded-full ring ring-neutral ring-offset-base-300 ring-offset-2">
-              <img src={review.img} alt="" />
+            <div className="w-14 rounded-full ring ring-primary ring-offset-4">
+              <img src={review?.img} alt="" />
             </div>
           </div>
           <div className="pl-8">
-            <h2 className="card-title text-accent">{review.name}</h2>
+            <h2 className="text-primary font-medium text-base">
+              {review?.name}
+            </h2>
             <StarRatings
               starDimension={"20px"}
               starSpacing={"2px"}

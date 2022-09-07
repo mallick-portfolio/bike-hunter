@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from "react";
 import ProductCard from "../../components/Product/ProductCard.jsx";
-import axios from "axios";
 import Loading from "../../components/Shared/Loading";
+import useData from "../../hooks/useData.js";
 const HomeProduct = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const loadProduct = async () => {
-      const { data, status } = await axios.get(
-        "http://localhost:5000/products/home"
-      );
-      if (status === 200) {
-        setProducts(data.data);
-        setLoading(false);
-      } else {
-        setProducts(data.data);
-        setLoading(true);
-      }
-    };
-    loadProduct();
-  }, []);
+  const url = "http://localhost:5000/products/home";
+  const { loading, data: products } = useData(url);
   return (
     <div className="homeProduct-container">
       <div className="text-center pb-12">
