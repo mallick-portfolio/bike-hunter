@@ -37,6 +37,9 @@ module.exports = {
         menu: "0 0 10px 0 rgb(0 0 0 / 70%)",
         "4xl": "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff;",
       },
+      content: {
+        link: 'url("https://i.ibb.co/cQQt8b3/test.jpg")',
+      },
     },
   },
   plugins: [],

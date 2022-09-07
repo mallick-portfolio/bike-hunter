@@ -222,4 +222,13 @@ code {
   .card-price {
     @apply font-semibold text-lg text-primary;
   }
+  .homeProduct-container {
+    @apply container pt-24 lg:pt-28;
+  }
+  .homeProduct-title {
+    @apply text-4xl font-semibold relative after:absolute after:h-1 after:right-0 after:bg-primary after:-bottom-2 after:left-0 inline-block before:absolute before:left-1/2 before:translate-x-1/2 before:-bottom-3 before:w-3 before:h-3 before:rotate-45 before:bg-primary;
+  }
+  .homeProduct-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-8;
+  }
 }

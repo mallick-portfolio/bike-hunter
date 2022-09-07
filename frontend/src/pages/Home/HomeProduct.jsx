@@ -21,12 +21,14 @@ const HomeProduct = () => {
     loadProduct();
   }, []);
   return (
-    <div className="container pt-24 lg:pt-28">
-      <div className="text-center">
+    <div className="homeProduct-container">
+      <div className="text-center pb-12">
         <h4 className="text-lg lg:text-xl">YOUR RIDE START HERE.</h4>
-        <h2 className="text-4xl font-semibold">Best Seller</h2>
+        <h2 className="homeProduct-title">
+          Best <span className="text-primary">Seller</span>
+        </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-8">
+      <div className="homeProduct-grid">
         {loading ? (
           <Loading />
         ) : (
