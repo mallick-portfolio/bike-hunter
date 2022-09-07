@@ -25,7 +25,7 @@ module.exports = {
         page: "#222",
         menu: "rgba(0, 0, 0, 0.7)",
         menu2: "rgba(0, 0, 0, 0.8)",
-        banner: "rgba(0, 0, 0, 0.5)"
+        banner: "rgba(0, 0, 0, 0.5)",
       },
       backgroundImage: {
         btn: "linear-gradient(145deg, #e2e8ec, #ffffff)",

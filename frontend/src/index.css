@@ -195,4 +195,31 @@ code {
   .featurecategory-title {
     @apply text-center font-medium text-base;
   }
+  .products-item {
+    @apply rounded-lg bg-btn shadow-4xl col-span-1 flex flex-col;
+  }
+  .product-content {
+    @apply px-2 border-t border-primary py-4 sm:px-4 lg:px-6 sm:py-6;
+  }
+  .product-img-div {
+    @apply rounded-tl-lg w-full mx-auto rounded-tr-lg relative;
+  }
+  .product-hover-content {
+    @apply absolute scale-0 group-hover:scale-100 top-0 left-0 right-0 bottom-0 bg-menu flex justify-center items-center gap-3 duration-1000 transition-all rounded-tl-lg rounded-tr-lg;
+  }
+  .product-hover-icon {
+    @apply px-4 py-2 text-white font-medium rounded-full bg-primary cursor-pointer hover:bg-secondary hover:text-primary hover:transition-all hover:duration-500;
+  }
+  .single-product-img {
+    @apply cursor-pointer mx-auto duration-500 p-4 scale-75 transition-all hover:scale-100;
+  }
+  .single-product-title {
+    @apply text-center text-sm md:text-base lg:text-lg font-semibold text-primary my-2;
+  }
+  .price-btn-flex {
+    @apply flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-6;
+  }
+  .card-price {
+    @apply font-semibold text-lg text-primary;
+  }
 }
