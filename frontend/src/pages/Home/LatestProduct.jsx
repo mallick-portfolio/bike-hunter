@@ -35,7 +35,7 @@ const LatestProduct = () => {
       <div className="">
         <Swiper
           loop={true}
-          autoplay={true}
+          autoplay={{ delay: 1000 }}
           slidesPerView={4}
           spaceBetween={30}
           navigation={{

@@ -9,7 +9,7 @@ const DiscountBanner = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
-        padding: "120px 0",
+        padding: "150px 0",
       }}
     >
       <div className="discount-container">

@@ -31,6 +31,7 @@ module.exports = {
         btn: "linear-gradient(145deg, #e2e8ec, #ffffff)",
         btnHover: "linear-gradient(145deg, #ff014f, #d11414)",
         loader: "linear-gradient(90deg, #009fff, #ec2f4b)",
+        
       },
       boxShadow: {
         "3xl": "5px 5px 15px #D1D9E6, -5px -5px 15px #ffffff",

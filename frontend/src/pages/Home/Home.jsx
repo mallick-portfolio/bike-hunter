@@ -3,6 +3,7 @@ import { HomeBanner } from "../../components/index.js";
 import DiscountBanner from "./DiscountBanner.jsx";
 import FeatureCategory from "./FeatureCategory.jsx";
 import FeatureItem from "./FeatureItem.jsx";
+import HelmetBanner from "./HelmetBanner.jsx";
 import HomeProduct from "./HomeProduct.jsx";
 import LatestProduct from "./LatestProduct.jsx";
 
@@ -15,6 +16,7 @@ const Home = () => {
       <DiscountBanner />
       <LatestProduct />
       <FeatureItem />
+      <HelmetBanner />
     </div>
   );
 };
