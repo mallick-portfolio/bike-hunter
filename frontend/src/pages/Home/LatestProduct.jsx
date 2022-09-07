@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import axios from "axios";
 import ProductCard from "../../components/Product/ProductCard.jsx";
 import Loading from "../../components/Shared/Loading.jsx";
-const LatestProduct = () => {
+const LatestProduct = ({ title }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -29,7 +29,7 @@ const LatestProduct = () => {
     <div className="container pt-24 lg:pt-28 relative z-10">
       <div className="text-left pb-12">
         <h2 className="text-4xl font-semibold relative after:absolute after:h-1 after:right-0 after:bg-primary after:-bottom-2 after:left-0 inline-block before:absolute before:left-1/2 before:translate-x-1/2 before:-bottom-3 before:w-3 before:h-3 before:rotate-45 before:bg-primary">
-          Latest Product
+          {title}
         </h2>
       </div>
       <div className="">
