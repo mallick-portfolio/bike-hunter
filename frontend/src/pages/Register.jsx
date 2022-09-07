@@ -27,7 +27,7 @@ const Register = () => {
   const [signInWithGithub, GitUser, GitLoading, GitError] =
     useSignInWithGithub(auth);
 
-  const [token, load] = useToken(user || googleUser || GitUser, displayName);
+  const [token] = useToken(user || googleUser || GitUser, displayName);
   const {
     register,
     handleSubmit,
@@ -41,11 +41,13 @@ const Register = () => {
     }
   }, [navigate, token]);
 
-  if (error || updateError || googleError || GitError) {
-    toast("Sign Up failed");
-    navigate("/register");
-  }
-  if (loading || load || updating || googleLoading || GitLoading) {
+  useEffect(() => {
+    if (error || updateError || googleError || GitError) {
+      toast("Sign Up failed");
+      navigate("/register");
+    }
+  }, [GitError, error, googleError, navigate, updateError]);
+  if (loading || updating || googleLoading || GitLoading) {
     return <Loading />;
   }
 

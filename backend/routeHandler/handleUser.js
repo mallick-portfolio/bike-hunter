@@ -9,8 +9,12 @@ router.get("/", async (req, res) => {});
 router.put("/:email", async (req, res) => {
   try {
     const filter = { email: req.params.email };
+    let name;
+    if (req.body.name !== null) {
+      name = req.body.name;
+    }
     const update = {
-      name: req.body.name,
+      name,
       email: req.params.email,
       role: req.body.role,
       image: "",

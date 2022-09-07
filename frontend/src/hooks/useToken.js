@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-
-const useToken = (user, displayName = "") => {
+import axios from "axios";
+const useToken = (user, displayName = null) => {
   const [token, setToken] = useState("");
-  const [load, setLoading] = useState(false);
   console.log(user);
 
   useEffect(() => {
@@ -14,25 +13,24 @@ const useToken = (user, displayName = "") => {
       role: "user",
     };
     if (email) {
-      setLoading(true);
-      fetch(`http://localhost:5000/users/${email}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(currentUser),
-      })
-        .then((res) => res.json())
-        .then((data) => {
+      const loaduser = async () => {
+        const { data, status } = await axios.put(
+          `http://localhost:5000/users/${email}`,
+          currentUser
+        );
+        if (status === 200) {
           console.log("data inside useToken", data);
           const accessToken = data.token;
           localStorage.setItem("accessToken", accessToken);
           setToken(accessToken);
-          setLoading(false);
-        });
+        } else {
+          console.log("somthing error");
+        }
+      };
+      loaduser();
     }
   }, [displayName, user]);
-  return [token, load];
+  return [token];
 };
 
 export default useToken;
