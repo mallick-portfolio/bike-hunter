@@ -25,11 +25,11 @@ const Login = () => {
 
   const { register, handleSubmit } = useForm();
   useEffect(() => {
-    if (user || googleUser || githubUser) {
+    if (token) {
       toast("Login Successfull");
-      navigate("/home");
+      navigate("/");
     }
-  }, [githubUser, googleUser, navigate, user]);
+  }, [navigate, token]);
   useEffect(() => {
     if (error || googleError || githubError) {
       toast.warning("Authentication Failed");

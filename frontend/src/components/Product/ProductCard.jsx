@@ -1,14 +1,21 @@
 import React from "react";
 import { AiOutlineEye, AiOutlineHeart } from "react-icons/ai";
 import StarRatting from "../Shared/StarRating.jsx";
-
+import { useDispatch } from "react-redux";
+import { openModal } from "../../feature/slice/modalSlice.js";
 const ProductCard = ({ product }) => {
+  const dispatch = useDispatch();
   return (
     <div className="products-item">
       <div className="product-img-div group">
         <img className="w-2/3 mx-auto py-2" src={product?.image} alt="" />
         <div className="product-hover-content">
-          <div className="product-hover-icon">
+          <div
+            onClick={() => {
+              dispatch(openModal(product));
+            }}
+            className="product-hover-icon"
+          >
             <AiOutlineEye className="text-xl" />
           </div>
           <div className="product-hover-icon">
