@@ -223,7 +223,7 @@ code {
     @apply font-semibold text-lg text-primary;
   }
   .homeProduct-container {
-    @apply container pt-24 lg:pt-28;
+    @apply container py-24 lg:py-28;
   }
   .homeProduct-title {
     @apply text-4xl font-semibold relative after:absolute after:h-1 after:right-0 after:bg-primary after:-bottom-2 after:left-0 inline-block before:absolute before:left-1/2 before:translate-x-1/2 before:-bottom-3 before:w-3 before:h-3 before:rotate-45 before:bg-primary;

@@ -4,6 +4,7 @@ import DiscountBanner from "./DiscountBanner.jsx";
 import FeatureCategory from "./FeatureCategory.jsx";
 import FeatureItem from "./FeatureItem.jsx";
 import HomeProduct from "./HomeProduct.jsx";
+import LatestProduct from "./LatestProduct.jsx";
 
 const Home = () => {
   return (
@@ -11,8 +12,9 @@ const Home = () => {
       <HomeBanner />
       <FeatureCategory />
       <HomeProduct />
-      <FeatureItem />
       <DiscountBanner />
+      <LatestProduct />
+      <FeatureItem />
     </div>
   );
 };
