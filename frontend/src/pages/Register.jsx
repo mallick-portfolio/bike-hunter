@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -15,7 +15,9 @@ import { useEffect } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { auth } from "../firebase.js";
 import Loading from "../components/Shared/Loading.jsx";
+import useToken from "../hooks/useToken.js";
 const Register = () => {
+  const [displayName, setDisplayName] = useState("");
   const navigate = useNavigate();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -25,6 +27,7 @@ const Register = () => {
   const [signInWithGithub, GitUser, GitLoading, GitError] =
     useSignInWithGithub(auth);
 
+  const [token, load] = useToken(user || googleUser || GitUser, displayName);
   const {
     register,
     handleSubmit,
@@ -32,23 +35,23 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    if (user || googleUser || GitUser) {
-      toast("Register Successfull");
-      navigate("/home");
+    if (token) {
+      toast("Registation Successfully");
+      navigate("/");
     }
-  }, [GitUser, googleUser, navigate, user]);
-  useEffect(() => {
-    if (error || updateError || googleError || GitError) {
-      toast("Sign Up failed");
-      navigate("/register");
-    }
-  }, [GitError, error, googleError, navigate, updateError]);
-  if (loading || updating || googleLoading || GitLoading) {
+  }, [navigate, token]);
+
+  if (error || updateError || googleError || GitError) {
+    toast("Sign Up failed");
+    navigate("/register");
+  }
+  if (loading || load || updating || googleLoading || GitLoading) {
     return <Loading />;
   }
 
   const onSubmit = async (data) => {
     const displayName = data.name;
+    setDisplayName(displayName);
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName });
   };
