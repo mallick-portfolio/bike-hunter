@@ -243,4 +243,25 @@ code {
   .section-next {
     @apply mx-auto mt-1 rounded-full w-8 h-8 border-2 border-primary text-primary cursor-pointer;
   }
+  .modal-container {
+    @apply flex justify-center items-center h-auto lg:h-screen fixed top-0 left-0 bg-menu w-screen right-0 bottom-0  z-50 overflow-scroll lg:overflow-hidden;
+  }
+  .modal-in {
+    @apply lg:w-2/3 w-full flex flex-col md:flex-row justify-between gap-6 p-4 lg:p-12 mx-auto bg-btn border border-primary rounded-2xl;
+  }
+  .modal-col {
+    @apply w-full md:w-1/2 p-4 bg-btn shadow-3xl rounded-lg;
+  }
+  .modal-product-title {
+    @apply text-primary text-xl lg:text-2xl font-serif;
+  }
+  .modal-paragraph {
+    @apply flex justify-between items-center py-0.5;
+  }
+  .modal-span {
+    @apply text-primary text-base font-semibold;
+  }
+  .modal-subSpan{
+    @apply text-primary text-xl font-semibold
+  }
 }
