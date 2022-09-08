@@ -172,7 +172,7 @@ const items = (
       <li className="dashboard-item">Orders</li>
       <li className="dashboard-item">Add Product</li>
       <li className="dashboard-item">Manage Product</li>
-      <li className="common-btn mt-3">
+      <li className="common-btn2 mt-3">
         <button onClick={() => signOut(auth)}>Sign Out</button>
       </li>
     </ul>

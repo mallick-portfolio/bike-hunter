@@ -38,7 +38,12 @@ const ShopForm = ({ product }) => {
     ) {
       const { data, status } = await axios.post(
         "http://localhost:5000/order",
-        order
+        order,
+        {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
       );
       console.log(data, status);
       if (status === 201) {

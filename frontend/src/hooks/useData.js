@@ -6,7 +6,11 @@ const useData = (url) => {
   useEffect(() => {
     const loadProduct = async () => {
       setLoading(true);
-      const { data, status } = await axios.get(url);
+      const { data, status } = await axios.get(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
       if (status === 200) {
         setData(data.data);
         setLoading(false);

@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const checkLogin = require("../middleware/checkLogin.js");
 const router = express.Router();
 const productSchema = require("../Schema/productSchema.js");
 const Product = mongoose.model("Product", productSchema);
