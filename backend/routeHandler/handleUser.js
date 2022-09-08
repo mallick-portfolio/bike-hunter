@@ -4,7 +4,25 @@ const router = express.Router();
 const userSchema = require("../Schema/userSchema.js");
 const User = mongoose.model("User", userSchema);
 const jwt = require("jsonwebtoken");
-router.get("/", async (req, res) => {});
+router.get("/", async (req, res) => {
+  try {
+    const result = await User.find({});
+    if (result && result.length > 0) {
+      res.status(200).json({
+        message: "successfully",
+        result,
+      });
+    } else {
+      res.status(204).status({
+        error: "Failed to load user",
+      });
+    }
+  } catch {
+    res.status(204).status({
+      error: "Failed to load user",
+    });
+  }
+});
 
 router.put("/:email", async (req, res) => {
   try {
