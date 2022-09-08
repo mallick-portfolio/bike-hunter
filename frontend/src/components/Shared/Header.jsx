@@ -51,7 +51,7 @@ const Header = () => {
                   />
                   <div
                     className={`absolute ${
-                      active ? "top-16 right-0" : "-top-96 right-0"
+                      active ? "top-16 right-0" : "-top-[600px] right-0"
                     } dropdown-menu`}
                   >
                     {items}
@@ -82,7 +82,7 @@ const Header = () => {
             </button>
             <div
               className={`absolute ${
-                active ? "top-16 right-0" : "-top-96 right-0"
+                active ? "top-16 right-0" : "-top-[600px] right-0"
               } dropdown-menu`}
             >
               {items}
@@ -162,12 +162,16 @@ const menus = [
 ];
 const items = (
   <>
-    <ul className="flex flex-col gap-1">
-      <li className="dropdown-menu-item">Dashboard</li>
-      <li className="dropdown-menu-item">Users</li>
-      <li className="dropdown-menu-item">Orders</li>
-      <li className="dropdown-menu-item">Add Product</li>
-      <li className="dropdown-menu-item">Manage Product</li>
+    <ul className="flex flex-col gap-3">
+      <li>
+        <Link className="dashboard-item" to="/dashboard">
+          Dashboard
+        </Link>
+      </li>
+      <li className="dashboard-item">Users</li>
+      <li className="dashboard-item">Orders</li>
+      <li className="dashboard-item">Add Product</li>
+      <li className="dashboard-item">Manage Product</li>
       <li className="common-btn mt-3">
         <button onClick={() => signOut(auth)}>Sign Out</button>
       </li>

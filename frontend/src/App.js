@@ -42,10 +42,12 @@ const App = () => {
           }
         >
           {" "}
-          <Route path="order/:email" element={<Orders />} />
+          <Route path="order" element={<Orders />} />
         </Route>
       </Routes>
-      {path !== "/login" && path !== "/register" && <Footer />}
+      {path !== "/login" && path !== "/register" && path !== "/dashboard" && (
+        <Footer />
+      )}
       {data.item && <Modal item={data.item} />}
     </div>
   );

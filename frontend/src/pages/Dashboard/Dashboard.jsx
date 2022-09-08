@@ -6,51 +6,53 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="drawer drawer-mobile lg:px-16 pb-8 text-accent mx-auto">
-      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content lg:px-16 px-2">
-        <div className="bg-base-300 px-4 rounded-lg py-4">
+    <div className="w-screen min-h-screen flex flex-row-reverse">
+      <div className="w-5/6 bg-blue-500">
+        <div className="">
           <Outlet />
         </div>
       </div>
-      <div className={`drawer-side rounded-lg hidden `}>
-        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu text-accent p-4 overflow-y-auto w-60 bg-base-300 ">
+      <div className={`bg-btn shadow-xl w-1/6 px-6 pt-6`}>
+        <label htmlFor="" className="drawer-overlay"></label>
+        <ul className="flex flex-col gap-4">
           <>
             <li>
-              <Link className="font-bold" to={"/dashboard/my-orders"}>
+              <Link className="dashboard-item" to={"/dashboard/order"}>
                 My Orders
               </Link>
             </li>
             <li>
-              <Link className="font-bold" to={"/dashboard/my-reviews"}>
+              <Link className="dashboard-item" to={"/dashboard/my-reviews"}>
                 My Reviews
               </Link>
             </li>
             <li>
-              <Link className="font-bold" to={"/dashboard/add-review"}>
+              <Link className="dashboard-item" to={"/dashboard/add-review"}>
                 Add Review
               </Link>
             </li>
           </>
           <>
             <li>
-              <Link className="font-bold" to={"/dashboard/users"}>
+              <Link className="dashboard-item" to={"/dashboard/users"}>
                 Users
               </Link>
             </li>
             <li>
-              <Link className="font-bold" to={"/dashboard/orders"}>
+              <Link className="dashboard-item" to={"/dashboard/orders"}>
                 Orders
               </Link>
             </li>
             <li>
-              <Link className="font-bold" to={"/dashboard/add-product"}>
+              <Link className="dashboard-item" to={"/dashboard/add-product"}>
                 Add Product
               </Link>
             </li>
             <li>
-              <Link className="font-bold" to={"/dashboard/manage-products"}>
+              <Link
+                className="dashboard-item"
+                to={"/dashboard/manage-products"}
+              >
                 Manage Products
               </Link>
             </li>
