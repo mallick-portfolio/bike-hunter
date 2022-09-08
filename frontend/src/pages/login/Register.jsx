@@ -13,9 +13,9 @@ import {
 
 import { useEffect } from "react";
 import { AiFillGithub } from "react-icons/ai";
-import { auth } from "../firebase.js";
-import Loading from "../components/Shared/Loading.jsx";
-import useToken from "../hooks/useToken.js";
+import { auth } from "../../firebase.js";
+import Loading from "../../components/Shared/Loading.jsx";
+import useToken from "../../hooks/useToken.js";
 const Register = () => {
   const [displayName, setDisplayName] = useState("");
   const navigate = useNavigate();

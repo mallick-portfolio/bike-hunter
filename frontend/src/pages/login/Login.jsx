@@ -9,9 +9,9 @@ import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Loading from "../components/Shared/Loading.jsx";
-import { auth } from "../firebase.js";
-import useToken from "../hooks/useToken.js";
+import Loading from "../../components/Shared/Loading.jsx";
+import { auth } from "../../firebase.js";
+import useToken from "../../hooks/useToken.js";
 
 const Login = () => {
   const navigate = useNavigate();

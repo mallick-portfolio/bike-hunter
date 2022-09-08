@@ -48,46 +48,12 @@ const Modal = ({ item }) => {
               <span className="modal-span">Minimum Ordered Quantity</span>{" "}
               <span className="modal-subSpan">{data.minQty}</span>
             </p>
-            <button onClick={() => dispatch(closeModal())}>
-              <FontAwesomeIcon className="xicon" icon={faXmark} />
-            </button>
-          </div>
-          <div className="modal-col">
-            <form action="">
-              <div className="my-1 lg:my-2">
-                <label className="form-label" htmlFor="">
-                  User Name
-                </label>
-                <input className="form-input" type="text" />
-              </div>
-              <div className="my-1 lg:my-2">
-                <label className="form-label" htmlFor="">
-                  Contact Number
-                </label>
-                <input className="form-input" type="text" />
-              </div>
-              <div className="my-1 lg:my-2">
-                <label className="form-label" htmlFor="">
-                  Number of Quantity You want to Buy
-                </label>
-                <input className="form-input" type="text" />
-              </div>
-              <div className="my-1 lg:my-2">
-                <label className="form-label" htmlFor="">
-                  Country
-                </label>
-                <input className="form-input" type="text" />
-              </div>
-              <div className="my-1 lg:my-2">
-                <label className="form-label" htmlFor="">
-                  Address
-                </label>
-                <input className="form-input" type="text" />
-              </div>
-              <div className="mt-2">
-                <input className="form-submit" type="submit" value={"Submit"} />
-              </div>
-            </form>
+            <div className="flex justify-between items-center pt-4">
+              <button onClick={() => dispatch(closeModal())}>
+                <FontAwesomeIcon className="xicon" icon={faXmark} />
+              </button>
+              <button className="common-btn2">Buy Now</button>
+            </div>
           </div>
         </div>
       </div>
