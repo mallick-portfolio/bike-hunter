@@ -6,13 +6,15 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="w-screen min-h-screen flex flex-row-reverse">
-      <div className="w-5/6 bg-btn shadow-3xl">
+    <div className="dashboard">
+      <div className="dashboard-col1">
         <div className="">
           <Outlet />
         </div>
       </div>
-      <div className={`bg-btn shadow-xl w-1/6 px-6 pt-6`}>
+      <div
+        className={`bg-btn shadow-xl lg:w-1/6 w-full hidden lg:flex flex-col px-6 pt-6`}
+      >
         <label htmlFor="" className="drawer-overlay"></label>
         <ul className="flex flex-col gap-4">
           <>

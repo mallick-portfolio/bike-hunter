@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
+import { signOut } from "firebase/auth";
 import axios from "axios";
+import { auth } from "../firebase.js";
+import { useNavigate } from "react-router-dom";
 const useData = (url) => {
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -16,10 +20,13 @@ const useData = (url) => {
         setLoading(false);
       } else {
         setLoading(true);
+        await signOut(auth);
+        localStorage.removeItem("accessToken");
+        navigate("/");
       }
     };
     loadProduct();
-  }, [url]);
+  }, [navigate, url]);
   return { loading, data };
 };
 

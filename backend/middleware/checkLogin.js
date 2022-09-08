@@ -7,9 +7,12 @@ const checkLogin = (req, res, next) => {
     const { userName, email } = decoded;
     (req.userName = userName), (req.email = email);
     next();
-  } catch(err) {
-    console.log(err)
-    next("I am error from token with checklogin");
+  } catch (err) {
+    if (err) {
+      console.log(error)
+      res.status(403).json({ message: "Forbidden access" });
+      next("error from check login");
+    }
   }
 };
 

@@ -276,4 +276,19 @@ code {
   .dashboard-item {
     @apply text-primary text-base font-medium px-4 py-2 bg-btn hover:bg-btnHover shadow-4xl hover:transition-all hover:duration-500 hover:text-white rounded-full block;
   }
+  .dashboard {
+    @apply w-screen min-h-screen flex flex-row-reverse;
+  }
+  .dashboard-col1 {
+    @apply lg:w-5/6 w-full bg-btn shadow-3xl;
+  }
+  .order-title {
+    @apply text-2xl font-semibold leading-tight;
+  }
+  .order-th {
+    @apply px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider;
+  }
+  .order-td {
+    @apply px-5 py-5 border-b border-gray-200 bg-white text-sm
+  }
 }

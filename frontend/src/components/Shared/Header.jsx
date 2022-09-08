@@ -164,7 +164,7 @@ const items = (
   <>
     <ul className="flex flex-col gap-3">
       <li>
-        <Link className="dashboard-item" to="/dashboard">
+        <Link className="dashboard-item" to="/dashboard/order">
           Dashboard
         </Link>
       </li>

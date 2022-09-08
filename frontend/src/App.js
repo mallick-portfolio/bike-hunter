@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import BuyProduct from "./pages/Shop/BuyProduct.jsx";
 import { useSelector } from "react-redux";
 import Modal from "./components/Shared/Modal.jsx";
-import { Dashboard, Orders } from "./pages/Dashboard/index.js";
+import { AddReview, Dashboard, Orders } from "./pages/Dashboard/index.js";
 
 const App = () => {
   const data = useSelector((state) => state.modal);
@@ -43,6 +43,7 @@ const App = () => {
         >
           {" "}
           <Route index path="order" element={<Orders />} />
+          <Route index path="add-review" element={<AddReview />} />
         </Route>
       </Routes>
       {path !== "/login" &&

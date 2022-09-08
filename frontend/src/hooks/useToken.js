@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase.js";
 const useToken = (user, displayName = null) => {
   const [token, setToken] = useState("");
-  console.log(user);
-
   useEffect(() => {
     const email = user?.user?.email;
     const currentUser = {
@@ -28,6 +28,8 @@ const useToken = (user, displayName = null) => {
         }
       };
       loaduser();
+    } else {
+      signOut(auth);
     }
   }, [displayName, user]);
   return [token];
