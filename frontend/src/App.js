@@ -8,7 +8,6 @@ import BuyProduct from "./pages/Shop/BuyProduct.jsx";
 import { useSelector } from "react-redux";
 import Modal from "./components/Shared/Modal.jsx";
 
-
 const App = () => {
   const data = useSelector((state) => state.modal);
   const location = useLocation();

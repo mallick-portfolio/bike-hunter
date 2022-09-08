@@ -1,30 +1,55 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Loading from "../../components/Shared/Loading.jsx";
 import { auth } from "../../firebase.js";
 
 const ShopForm = ({ product }) => {
+  const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
   const [error, setError] = useState({
     message: "",
   });
-  console.log(error);
   const [data, setData] = useState({
     email: user?.email,
     phone: "",
     qty: "",
     location: "",
   });
-
   if (loading) {
     return <Loading />;
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    const order = {
+      ...data,
+      userName: user.displayName,
+      productName: product.name,
+      productId: product._id,
+      image: product.image,
+      price: product.price,
+    };
+    console.log(order);
     e.preventDefault();
     if (
-      product.avilQty < Number(data.qty) ||
-      product.minQty < Number(data.qty)
+      product.avilQty <= Number(data.qty) ||
+      product.minQty <= Number(data.qty)
     ) {
+      const { data, status } = await axios.post(
+        "http://localhost:5000/order",
+        order
+      );
+      console.log(data, status);
+      if (status === 201) {
+        toast("Order Successfull. You can Try Another product");
+        navigate("/shop");
+      } else {
+        toast("Failed to order. Please try again");
+      }
+      setError({
+        message: "",
+      });
     } else {
       setError({ message: "Quantity must be greater than minimum quantity" });
     }
@@ -76,7 +101,7 @@ const ShopForm = ({ product }) => {
             name="qty"
             type="text"
           />
-          <p className="text-primary text-base">{error.message}</p>
+          <p className="text-blue-500 text-base">{error.message}</p>
         </div>
         <div className="my-1 lg:my-2">
           <label className="form-label" htmlFor="">
@@ -92,7 +117,7 @@ const ShopForm = ({ product }) => {
             type="text"
           />
         </div>
-        <div className="mt-2">
+        <div className="pt-2">
           <input
             required
             className="form-submit"

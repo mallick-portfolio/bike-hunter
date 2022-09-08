@@ -10,21 +10,12 @@ const orderSchema = mongoose.Schema({
   },
   phone: {
     type: String,
-    required: true,
   },
-  title: {
-    type: String,
-    required: true,
-  },
-  des: {
+  productName: {
     type: String,
     required: true,
   },
   productId: {
-    type: String,
-    required: true,
-  },
-  category: {
     type: String,
     required: true,
   },

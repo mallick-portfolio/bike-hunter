@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../feature/slice/modalSlice.js";
 const Alert = ({ item }) => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.modal.item);
-  console.log(data);
+  const data = useSelector((state) => console.log(state));
+
   useEffect(() => {
     if (item) {
       document.body.style.overflow = "hidden";
@@ -22,38 +22,7 @@ const Alert = ({ item }) => {
       <div className="mt-64 md:mt-0">
         <div className="modal-in">
           <div className="modal-col">
-            <img className="w-44 mx-auto" src={data.image} alt="" />
-            <h1 className="modal-product-title">{data.name}</h1>
-            <p className="text-base py-2 text-tertiary">
-              {data.des.length > 110 ? data.des.slice(0, 110) : data.des}
-            </p>
-            <p className="modal-paragraph">
-              <span className="modal-span">Category</span>{" "}
-              <span className="modal-subSpan">{data.category} </span>
-            </p>
-            <p className="modal-paragraph">
-              <span className="modal-span">
-                Price
-                <span className="text-xs text-tertiary ml-1">
-                  (Per Product)
-                </span>
-              </span>{" "}
-              <span className="modal-subSpan">${data.price} </span>
-            </p>
-            <p className="modal-paragraph">
-              <span className="modal-span">Available Quantity</span>{" "}
-              <span className="modal-subSpan">{data.avilQty}</span>
-            </p>
-            <p className="modal-paragraph">
-              <span className="modal-span">Minimum Ordered Quantity</span>{" "}
-              <span className="modal-subSpan">{data.minQty}</span>
-            </p>
-            <div className="modal-btn">
-              <button onClick={() => dispatch(closeModal())}>
-                <FontAwesomeIcon className="xicon" icon={faXmark} />
-              </button>
-              <button className="common-btn2">Buy Now</button>
-            </div>
+            hello wo
           </div>
         </div>
       </div>
