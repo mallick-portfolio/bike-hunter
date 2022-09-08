@@ -31,7 +31,7 @@ const AddReview = () => {
       .then((res) => {
         if (res.data.acknowledged) {
           toast("Review Successfully.");
-          navigate("/dashboard/my-reviews");
+          navigate("/dashboard/review");
         }
       });
   };
