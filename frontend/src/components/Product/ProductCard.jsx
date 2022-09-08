@@ -10,12 +10,7 @@ const ProductCard = ({ product }) => {
       <div className="product-img-div group">
         <img className="w-2/3 mx-auto py-2" src={product?.image} alt="" />
         <div className="product-hover-content">
-          <div
-            onClick={() => {
-              dispatch(openModal(product));
-            }}
-            className="product-hover-icon"
-          >
+          <div className="product-hover-icon">
             <AiOutlineEye className="text-xl" />
           </div>
           <div className="product-hover-icon">
@@ -28,7 +23,14 @@ const ProductCard = ({ product }) => {
         <StarRatting rating={5} />
         <div className="price-btn-flex">
           <p className="card-price">${product?.price}</p>
-          <button className="common-btn2">Buy Now</button>
+          <button
+            onClick={() => {
+              dispatch(openModal(product));
+            }}
+            className="common-btn2"
+          >
+            Buy Now
+          </button>
         </div>
       </div>
     </div>

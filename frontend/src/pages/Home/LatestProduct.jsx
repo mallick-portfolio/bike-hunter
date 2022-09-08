@@ -18,7 +18,7 @@ const LatestProduct = ({ title }) => {
       <div className="">
         <Swiper
           loop={true}
-          autoplay={{ delay: 1000 }}
+          autoplay={{ delay: 3000 }}
           slidesPerView={4}
           spaceBetween={30}
           navigation={{
