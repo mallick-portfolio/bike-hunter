@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Shared/Loading.jsx";
 import useSingleData from "../../hooks/useSingleData.js";
