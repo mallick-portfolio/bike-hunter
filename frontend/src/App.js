@@ -45,9 +45,9 @@ const App = () => {
           <Route path="order" element={<Orders />} />
         </Route>
       </Routes>
-      {path !== "/login" && path !== "/register" && path !== "/dashboard" && (
-        <Footer />
-      )}
+      {path !== "/login" &&
+        path !== "/register" &&
+        !path.includes("/dashboard") && <Footer />}
       {data.item && <Modal item={data.item} />}
     </div>
   );

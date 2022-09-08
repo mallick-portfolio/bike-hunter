@@ -4,6 +4,27 @@ const router = express.Router();
 const orderSchema = require("../Schema/orderSchema.js");
 const Order = mongoose.model("Order", orderSchema);
 router.get("/", async (req, res) => {});
+router.get("/:email", async (req, res) => {
+  try {
+    const result = await Order.find({email: req.params.email});
+    if (result) {
+      res.status(200).json({
+        message: "Request Successfull",
+        data: result,
+      });
+    } else {
+      console.log('i am from elase')
+      res.status(201).json({
+        error: "Failed to load Data",
+      });
+    }
+  } catch(err) {
+    console.log(err)
+    res.status(201).json({
+      error: "Failed to load Data",
+    });
+  }
+});
 router.post("/", async (req, res) => {
   try {
     const newOrder = new Order(req.body);

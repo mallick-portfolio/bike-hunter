@@ -7,7 +7,7 @@ const Dashboard = () => {
 
   return (
     <div className="w-screen min-h-screen flex flex-row-reverse">
-      <div className="w-5/6 bg-blue-500">
+      <div className="w-5/6 bg-btn shadow-3xl">
         <div className="">
           <Outlet />
         </div>
