@@ -13,7 +13,7 @@ const Header = () => {
     return <Loading />;
   }
   return (
-    <div className="header-container">
+    <div className="header-container ">
       <div>
         <h1 className="text-2xl font-medium text-primary">
           <Link to="/">

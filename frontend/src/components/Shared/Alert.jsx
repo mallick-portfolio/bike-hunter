@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../feature/slice/modalSlice.js";
-const Modal = ({ item }) => {
+const Alert = ({ item }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.modal.item);
   console.log(data);
@@ -61,4 +61,4 @@ const Modal = ({ item }) => {
   );
 };
 
-export default Modal;
+export default Alert;

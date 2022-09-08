@@ -247,21 +247,24 @@ code {
     @apply flex justify-center items-center h-auto lg:h-screen fixed top-0 left-0 bg-menu w-screen right-0 bottom-0  z-50 overflow-scroll lg:overflow-hidden;
   }
   .modal-in {
-    @apply lg:w-2/3 w-full  p-4 lg:p-12 mx-auto bg-btn border border-primary rounded-2xl;
+    @apply lg:w-2/3 w-full  p-4 lg:p-8 mx-auto bg-btn border border-primary rounded-2xl;
   }
   .modal-col {
-    @apply w-full p-4 bg-btn shadow-3xl rounded-lg;
+    @apply w-full p-8 bg-btn shadow-3xl rounded-lg;
   }
   .modal-product-title {
     @apply text-primary text-xl lg:text-2xl font-serif;
   }
   .modal-paragraph {
-    @apply flex justify-between items-center py-0.5;
+    @apply flex justify-between items-center py-0.5 border-b border-tertiary;
   }
   .modal-span {
     @apply text-primary text-base font-semibold;
   }
   .modal-subSpan {
     @apply text-primary text-xl font-semibold;
+  }
+  .modal-btn {
+    @apply flex justify-between items-center pt-4;
   }
 }

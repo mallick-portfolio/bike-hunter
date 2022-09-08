@@ -7,7 +7,7 @@ import {
 import { useForm } from "react-hook-form";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../components/Shared/Loading.jsx";
 import { auth } from "../../firebase.js";
@@ -15,6 +15,7 @@ import useToken from "../../hooks/useToken.js";
 
 const Login = () => {
   const navigate = useNavigate();
+  let location = useLocation();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
@@ -24,12 +25,13 @@ const Login = () => {
   const [token] = useToken(user || googleUser || githubUser);
 
   const { register, handleSubmit } = useForm();
+  let from = location.state?.from?.pathname || "/";
   useEffect(() => {
     if (token) {
       toast("Login Successfull");
-      navigate("/");
+      navigate(from, { replace: true });
     }
-  }, [navigate, token]);
+  }, [from, navigate, token]);
   useEffect(() => {
     if (error || googleError || githubError) {
       toast.warning("Authentication Failed");

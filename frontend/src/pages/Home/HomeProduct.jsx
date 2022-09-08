@@ -1,10 +1,7 @@
 import ProductCard from "../../components/Product/ProductCard.jsx";
 import Loading from "../../components/Shared/Loading";
-import Modal from "../../components/Shared/Modal.jsx";
 import useData from "../../hooks/useData.js";
-import { useSelector } from "react-redux";
 const HomeProduct = () => {
-  const data = useSelector((state) => state.modal);
   const url = "http://localhost:5000/products/home";
   const { loading, data: products } = useData(url);
   return (
@@ -24,7 +21,6 @@ const HomeProduct = () => {
           ))
         )}
       </div>
-      {data.item && <Modal item={data.item} />}
     </div>
   );
 };
