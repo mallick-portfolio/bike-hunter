@@ -42,7 +42,7 @@ const App = () => {
           }
         >
           {" "}
-          <Route path="order" element={<Orders />} />
+          <Route index path="order" element={<Orders />} />
         </Route>
       </Routes>
       {path !== "/login" &&
