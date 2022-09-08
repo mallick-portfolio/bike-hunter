@@ -87,6 +87,15 @@ code {
   .menu-head {
     @apply relative z-50 items-start w-64 pl-8 pt-8 shadow-menu bg-[#e9eef1];
   }
+  .dropdown-menu {
+    @apply z-40 w-72 bg-btn shadow-xl rounded-lg p-6 transition-all duration-500;
+  }
+  .dropdown-menu-item {
+    @apply text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary;
+  }
+  .userImage {
+    @apply rounded-full cursor-pointer ring-primary w-10 ring;
+  }
   .xicon {
     @apply text-primary text-2xl px-4 py-2 bg-btn hover:bg-btnHover shadow-4xl hover:transition-all hover:duration-500 hover:text-white rounded-full;
   }

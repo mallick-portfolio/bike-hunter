@@ -41,7 +41,7 @@ const Header = () => {
               <>
                 <li onClick={() => setActive(!active)} className="relative">
                   <img
-                    className="rounded-full cursor-pointer ring-primary w-12 ring"
+                    className="userImage"
                     src={
                       user?.photoURL
                         ? user?.photoURL
@@ -52,28 +52,9 @@ const Header = () => {
                   <div
                     className={`absolute ${
                       active ? "top-16 right-0" : "-top-96 right-0"
-                    } z-40 w-72 bg-btn shadow-xl rounded-lg p-6 transition-all duration-500`}
+                    } dropdown-menu`}
                   >
-                    <ul className="flex flex-col gap-1">
-                      <li className="text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary">
-                        Dashboard
-                      </li>
-                      <li className="text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary">
-                        Users
-                      </li>
-                      <li className="text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary">
-                        Orders
-                      </li>
-                      <li className="text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary">
-                        Add Product
-                      </li>
-                      <li className="text-base font-medium cursor-pointer hover:bg-primary hover:text-white hover:duration-500 hover:transition-all py-2 px-4 rounded-full hover:ring ring-primary">
-                        Manage Product
-                      </li>
-                      <li className="common-btn mt-3">
-                        <button onClick={() => signOut(auth)}>Sign Out</button>
-                      </li>
-                    </ul>
+                    {items}
                   </div>
                 </li>
               </>
@@ -86,7 +67,27 @@ const Header = () => {
             )}
           </ul>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
+          <div className="relative">
+            <button onClick={() => setActive(!active)}>
+              <img
+                className="userImage"
+                src={
+                  user?.photoURL
+                    ? user?.photoURL
+                    : "https://placeimg.com/192/192/people"
+                }
+                alt=""
+              />
+            </button>
+            <div
+              className={`absolute ${
+                active ? "top-16 right-0" : "-top-96 right-0"
+              } dropdown-menu`}
+            >
+              {items}
+            </div>
+          </div>
           <button onClick={() => setShow(!show)}>
             <FontAwesomeIcon className="xicon" icon={faBars} />
           </button>
@@ -159,4 +160,18 @@ const menus = [
     route: "/contact",
   },
 ];
+const items = (
+  <>
+    <ul className="flex flex-col gap-1">
+      <li className="dropdown-menu-item">Dashboard</li>
+      <li className="dropdown-menu-item">Users</li>
+      <li className="dropdown-menu-item">Orders</li>
+      <li className="dropdown-menu-item">Add Product</li>
+      <li className="dropdown-menu-item">Manage Product</li>
+      <li className="common-btn mt-3">
+        <button onClick={() => signOut(auth)}>Sign Out</button>
+      </li>
+    </ul>
+  </>
+);
 export default Header;
