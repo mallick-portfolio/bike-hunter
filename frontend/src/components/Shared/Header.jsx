@@ -206,13 +206,13 @@ const adminItem = (
   <>
     <ul className="flex flex-col gap-3">
       <li>
-        <Link className="dashboard-item" to={"/dashboard/admin/users"}>
-          Users
+        <Link className="dashboard-item" to={"/dashboard/admin/orders"}>
+          Orders
         </Link>
       </li>
       <li>
-        <Link className="dashboard-item" to={"/dashboard/admin/orders"}>
-          Orders
+        <Link className="dashboard-item" to={"/dashboard/admin/users"}>
+          Users
         </Link>
       </li>
       <li>

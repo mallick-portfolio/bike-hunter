@@ -51,15 +51,21 @@ const UserRow = ({ user }) => {
       </td>
       <td className="order-td">
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => handleAdmin(user)}
-            className="common-btn4 mx-0 lg:mx-3"
-          >
-            Admin
-          </button>
-          <button className="xicon">
-            <FontAwesomeIcon icon={faTrash} />
-          </button>
+          {user?.role === "admin" ? (
+            <button className="xicon">admin</button>
+          ) : (
+            <>
+              <button
+                onClick={() => handleAdmin(user)}
+                className="common-btn4 mx-0 lg:mx-3"
+              >
+                Make Admin
+              </button>
+              <button className="xicon">
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </>
+          )}
         </div>
       </td>
     </tr>

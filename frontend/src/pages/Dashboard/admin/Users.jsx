@@ -1,17 +1,12 @@
 import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import Loading from "../../../components/Shared/Loading.jsx";
-import { auth } from "../../../firebase.js";
-import useAdmin from "../../../hooks/useAdmin.js";
 import useData from "../../../hooks/useData.js";
 import UserRow from "./UserRow.jsx";
 
 const Users = () => {
-  const [user, loading] = useAuthState(auth);
-  const [admin, adminLoading] = useAdmin(user);
   const url = `http://localhost:5000/users`;
   const { loading: load, data: users } = useData(url);
-  if (loading || load || adminLoading) {
+  if (load) {
     return <Loading />;
   }
   return (
