@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     if (result && result.length > 0) {
       res.status(200).json({
         message: "successfully",
-        result,
+        data: result,
       });
     } else {
       res.status(204).status({
@@ -47,10 +47,7 @@ router.put("/:email", async (req, res) => {
           userName: req.body.name,
           email: req.params.email,
         },
-        process.env.JSON_WEB_TOKEN,
-        {
-          expiresIn: "1h",
-        }
+        process.env.JSON_WEB_TOKEN
       );
       res.status(200).json({
         message: "Successfully",
@@ -58,7 +55,6 @@ router.put("/:email", async (req, res) => {
       });
     }
   } catch (err) {
-    console.log(err);
     res.status(204).json({
       error: "Authentication Failed",
     });

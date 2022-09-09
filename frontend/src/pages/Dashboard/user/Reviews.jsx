@@ -12,7 +12,6 @@ const Reviews = () => {
   if (loading || load) {
     return <Loading />;
   }
-  console.log(reviews);
   return (
     <div class="container">
       <div class="py-8">

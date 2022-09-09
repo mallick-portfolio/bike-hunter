@@ -12,6 +12,7 @@ import {
   Dashboard,
   Orders,
   Reviews,
+  Users,
 } from "./pages/Dashboard/index.js";
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
           <Route index path="order" element={<Orders />} />
           <Route index path="add-review" element={<AddReview />} />
           <Route index path="review" element={<Reviews />} />
+          <Route index path="admin/users" element={<Users />} />
         </Route>
       </Routes>
       {path !== "/login" &&

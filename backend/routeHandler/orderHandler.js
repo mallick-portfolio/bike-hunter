@@ -15,13 +15,11 @@ router.get("/:email", checkLogin, async (req, res) => {
         data: result,
       });
     } else {
-      console.log("i am from elase");
       res.status(201).json({
         error: "Failed to load Data",
       });
     }
   } catch (err) {
-    console.log(err);
     res.status(201).json({
       error: "Failed to load Data",
     });

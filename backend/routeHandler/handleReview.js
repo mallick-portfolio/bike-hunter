@@ -5,6 +5,25 @@ const router = express.Router();
 const reviewSchema = require("../Schema/reviewSchema.js");
 const Review = mongoose.model("Review", reviewSchema);
 
+router.get("/", async (req, res) => {
+  try {
+    const result = await Review.find({ email: req.email });
+    if (result) {
+      res.status(200).json({
+        message: "Request Successfull",
+        data: result,
+      });
+    } else {
+      res.status(201).json({
+        error: "Failed to load Data",
+      });
+    }
+  } catch (err) {
+    res.status(201).json({
+      error: "Failed to load Data",
+    });
+  }
+});
 router.get("/:email", checkLogin, async (req, res) => {
   try {
     const result = await Review.find({ email: req.email });
@@ -14,13 +33,11 @@ router.get("/:email", checkLogin, async (req, res) => {
         data: result,
       });
     } else {
-      console.log("i am from elase");
       res.status(201).json({
         error: "Failed to load Data",
       });
     }
   } catch (err) {
-    console.log(err);
     res.status(201).json({
       error: "Failed to load Data",
     });

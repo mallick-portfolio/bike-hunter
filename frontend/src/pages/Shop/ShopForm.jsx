@@ -45,7 +45,6 @@ const ShopForm = ({ product }) => {
           },
         }
       );
-      console.log(data, status);
       if (status === 201) {
         toast("Order Successfull. You can Try Another product");
         navigate("/shop");

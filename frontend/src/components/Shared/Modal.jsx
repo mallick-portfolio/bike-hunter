@@ -2,11 +2,11 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { closeModal } from "../../feature/slice/modalSlice.js";
 const Modal = ({ item }) => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.modal.item);
-  console.log(data);
   useEffect(() => {
     if (item) {
       document.body.style.overflow = "hidden";
@@ -52,7 +52,11 @@ const Modal = ({ item }) => {
               <button onClick={() => dispatch(closeModal())}>
                 <FontAwesomeIcon className="xicon" icon={faXmark} />
               </button>
-              <button className="common-btn2">Buy Now</button>
+              <button onClick={() => dispatch(closeModal())}>
+                <Link className="common-btn2" to={`/shop/${data._id}`}>
+                  Buy Now
+                </Link>
+              </button>
             </div>
           </div>
         </div>

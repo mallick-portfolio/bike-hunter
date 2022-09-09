@@ -12,7 +12,6 @@ const Orders = () => {
   if (loading || load) {
     return <Loading />;
   }
-  console.log(orders);
   return (
     <div class="container">
       <div class="py-8">

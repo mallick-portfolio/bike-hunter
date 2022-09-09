@@ -9,7 +9,6 @@ const checkLogin = (req, res, next) => {
     next();
   } catch (err) {
     if (err) {
-      console.log(error)
       res.status(403).json({ message: "Forbidden access" });
       next("error from check login");
     }

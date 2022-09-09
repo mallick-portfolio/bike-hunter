@@ -36,7 +36,7 @@ const Dashboard = () => {
           </>
           <>
             <li>
-              <Link className="dashboard-item" to={"/dashboard/users"}>
+              <Link className="dashboard-item" to={"/dashboard/admin/users"}>
                 Users
               </Link>
             </li>
