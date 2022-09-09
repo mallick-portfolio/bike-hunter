@@ -4,6 +4,7 @@ import useData from "../../hooks/useData.js";
 const AllProduct = () => {
   const url = "http://localhost:5000/products";
   const { loading, data: products } = useData(url);
+  console.log(products.length)
   return (
     <div className="homeProduct-container">
       <div className="homeProduct-grid">

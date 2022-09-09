@@ -4,10 +4,12 @@ const checkLogin = require("../middleware/checkLogin.js");
 const router = express.Router();
 const productSchema = require("../Schema/productSchema.js");
 const Product = mongoose.model("Product", productSchema);
+const userSchema = require("../Schema/userSchema.js");
+const User = mongoose.model("User", userSchema);
 
 router.get("/", async (req, res) => {
   try {
-    const result = await Product.find({}).skip(0).limit(6);
+    const result = await Product.find({});
     if (result) {
       res.status(200).json({
         message: "Successfully data retrive",
@@ -63,5 +65,54 @@ router.get("/:id", async (req, res) => {
     });
   }
 });
+router.post("/", checkLogin, async (req, res) => {
+  try {
+    const result = await User.findOne({ email: req.email });
 
+    if (result.role === "admin") {
+      const newProduct = new Product(req.body);
+      const result = await newProduct.save();
+      if (result._id) {
+        res.status(201).json({
+          message: "Product Added Successfully",
+          result,
+        });
+      } else {
+        res.status(409).json({
+          error: "Failed to Added Product",
+        });
+      }
+    }
+  } catch {
+    res.status(409).json({
+      error: "Failed to Review",
+    });
+  }
+});
 module.exports = router;
+// try {
+//   const findUser = await User.findOne({ email: req.email }).exec();
+//   res.send(req.email);
+//   if (findUser) {
+//     const newProduct = new Product(req.body);
+//     const result = await newProduct.save();
+//     if (result._id) {
+//       res.status(201).json({
+//         message: "Review Successfully",
+//         result,
+//       });
+//     } else {
+//       res.status(409).json({
+//         error: "Failed to Review",
+//       });
+//     }
+//   } else {
+//     res.status(409).json({
+//       error: "Failed to Review",
+//     });
+//   }
+// } catch {
+//   res.status(409).json({
+//     error: "Failed to Add Product",
+//   });
+// }
