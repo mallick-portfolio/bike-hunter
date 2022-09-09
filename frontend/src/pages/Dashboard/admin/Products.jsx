@@ -23,6 +23,7 @@ const Products = () => {
                   <th className="order-th">Available Quantity</th>
                   <th className="order-th">Price</th>
                   <th className="order-th">Category</th>
+                  <th className="order-th">Description</th>
                   <th className="order-th">Action</th>
                   <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
                 </tr>
