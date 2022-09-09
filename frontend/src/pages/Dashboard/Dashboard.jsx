@@ -10,7 +10,6 @@ const Dashboard = () => {
   if (loading || adminLoading) {
     return <Loading />;
   }
-  console.log(admin);
   return (
     <div className="dashboard">
       <div className="dashboard-col1">
@@ -43,7 +42,7 @@ const Dashboard = () => {
               <li>
                 <Link
                   className="dashboard-item"
-                  to={"/dashboard/manage-products"}
+                  to={"/dashboard/admin/products"}
                 >
                   Manage Products
                 </Link>

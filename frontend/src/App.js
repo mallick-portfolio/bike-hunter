@@ -14,6 +14,7 @@ import {
 import {
   AddReview,
   AdminOrder,
+  AdminProducts,
   Dashboard,
   Orders,
   Reviews,
@@ -71,6 +72,15 @@ const App = () => {
             element={
               <RequireAdmin>
                 <AdminOrder />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            index
+            path="admin/products"
+            element={
+              <RequireAdmin>
+                <AdminProducts />
               </RequireAdmin>
             }
           />
