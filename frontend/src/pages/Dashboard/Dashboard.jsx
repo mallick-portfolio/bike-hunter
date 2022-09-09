@@ -35,7 +35,7 @@ const Dashboard = () => {
                 </Link>
               </li>
               <li>
-                <Link className="dashboard-item" to={"/dashboard/add-product"}>
+                <Link className="dashboard-item" to={"/dashboard/admin/add-product"}>
                   Add Product
                 </Link>
               </li>

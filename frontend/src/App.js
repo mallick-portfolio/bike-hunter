@@ -12,6 +12,7 @@ import {
   BuyProduct,
 } from "./pages/index.js";
 import {
+  AddProduct,
   AddReview,
   AdminOrder,
   AdminProducts,
@@ -81,6 +82,15 @@ const App = () => {
             element={
               <RequireAdmin>
                 <AdminProducts />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            index
+            path="admin/add-product"
+            element={
+              <RequireAdmin>
+                <AddProduct />
               </RequireAdmin>
             }
           />

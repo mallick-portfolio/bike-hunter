@@ -27,11 +27,7 @@ const productSchema = mongoose.Schema({
   minQty: {
     type: Number,
     required: true,
-  },
-  rating: {
-    type: Number,
-    required: true,
-  },
+  }
 });
 
 module.exports = productSchema;

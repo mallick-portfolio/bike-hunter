@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const ProductRow = ({ product }) => {
-  console.log("hello world");
   return (
     <tr>
       <td className="order-td">
