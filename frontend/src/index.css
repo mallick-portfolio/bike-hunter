@@ -73,7 +73,7 @@ code {
     @apply text-center text-primary sm:flex justify-center items-center text-xl sm:text-2xl absolute top-1/2 right-4 -translate-y-1/2 z-30 rounded-full w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 border-2 border-primary cursor-pointer hover:ring hover:ring-offset-2 duration-500 ring-primary;
   }
   .header-container {
-    @apply container flex justify-between items-center py-8;
+    @apply container flex justify-between transition-all duration-1000 items-center py-6;
   }
   .menu {
     @apply flex items-center gap-8;
