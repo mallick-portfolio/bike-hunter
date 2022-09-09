@@ -68,7 +68,6 @@ router.get("/:id", async (req, res) => {
 router.post("/", checkLogin, async (req, res) => {
   try {
     const result = await User.findOne({ email: req.email });
-
     if (result.role === "admin") {
       const newProduct = new Product(req.body);
       const result = await newProduct.save();

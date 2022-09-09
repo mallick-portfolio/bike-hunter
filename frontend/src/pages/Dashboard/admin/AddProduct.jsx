@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import axios from 'axios'
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
     des: "",
@@ -12,7 +15,7 @@ const AddProduct = () => {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newItem = {
+    const newProduct = {
       name: data.name,
       des: data.des,
       category: data.category,
@@ -21,7 +24,22 @@ const AddProduct = () => {
       avilQty: Number(data.avilQty),
       minQty: Number(data.minQty),
     };
-    const result = await axios("")
+    const { status } = await axios.post(
+      "http://localhost:5000/products",
+      newProduct,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    );
+    if (status === 201) {
+      toast("Product Added Successfully");
+      navigate("/dashboard/admin/products");
+    } else {
+      toast("Failed to add Product");
+      navigate("/dashboard/admin/add-product");
+    }
   };
 
   return (
