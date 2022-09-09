@@ -35,6 +35,9 @@ const orderSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  status: {
+    type: String,
+  },
 });
 
 module.exports = orderSchema;
