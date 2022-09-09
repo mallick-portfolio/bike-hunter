@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase.js";
 import { signOut } from "firebase/auth";
 import Loading from "./Loading.jsx";
+import useAdmin from "../../hooks/useAdmin.js";
 const Header = () => {
+  const navigate = useNavigate();
   const [user, loading] = useAuthState(auth);
+  const [admin, adminLoading] = useAdmin(user);
   const [show, setShow] = useState(false);
   const [active, setActive] = useState(false);
-  if (loading) {
+  if (loading || adminLoading) {
     return <Loading />;
   }
   return (
@@ -54,7 +57,7 @@ const Header = () => {
                       active ? "top-16 right-0" : "-top-[600px] right-0"
                     } dropdown-menu`}
                   >
-                    {items}
+                    {admin ? adminItem : usersItem}
                   </div>
                 </li>
               </>
@@ -85,7 +88,7 @@ const Header = () => {
                 active ? "top-16 right-0" : "-top-[600px] right-0"
               } dropdown-menu`}
             >
-              {items}
+              {admin ? adminItem : usersItem}
             </div>
           </div>
           <button onClick={() => setShow(!show)}>
@@ -160,7 +163,36 @@ const menus = [
     route: "/contact",
   },
 ];
-const items = (
+const usersItem = (
+  <>
+    <ul className="flex flex-col gap-3">
+      <li>
+        <Link className="dashboard-item" to="/dashboard/order">
+          Dashboard
+        </Link>
+      </li>
+      <li>
+        <Link className="dashboard-item" to="/dashboard/review">
+          My Review
+        </Link>
+      </li>
+      <li>
+        <Link className="dashboard-item" to="/dashboard/add-review">
+          Add Review
+        </Link>
+      </li>
+      <li>
+        <button
+          className="common-btn2 w-full mt-3"
+          onClick={() => signOut(auth)}
+        >
+          Sign Out
+        </button>
+      </li>
+    </ul>
+  </>
+);
+const adminItem = (
   <>
     <ul className="flex flex-col gap-3">
       <li>

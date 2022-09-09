@@ -1,10 +1,16 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import Loading from "../../components/Shared/Loading.jsx";
 import { auth } from "../../firebase.js";
+import useAdmin from "../../hooks/useAdmin.js";
 const Dashboard = () => {
-  const [user] = useAuthState(auth);
-
+  const [user, loading] = useAuthState(auth);
+  const [admin, adminLoading] = useAdmin(user);
+  if (loading || adminLoading) {
+    return <Loading />;
+  }
+  console.log(admin);
   return (
     <div className="dashboard">
       <div className="dashboard-col1">
@@ -17,48 +23,51 @@ const Dashboard = () => {
       >
         <label htmlFor="" className="drawer-overlay"></label>
         <ul className="flex flex-col gap-4">
-          <>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/order"}>
-                My Orders
-              </Link>
-            </li>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/review"}>
-                My Reviews
-              </Link>
-            </li>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/add-review"}>
-                Add Review
-              </Link>
-            </li>
-          </>
-          <>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/admin/users"}>
-                Users
-              </Link>
-            </li>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/orders"}>
-                Orders
-              </Link>
-            </li>
-            <li>
-              <Link className="dashboard-item" to={"/dashboard/add-product"}>
-                Add Product
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="dashboard-item"
-                to={"/dashboard/manage-products"}
-              >
-                Manage Products
-              </Link>
-            </li>
-          </>
+          {admin ? (
+            <>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/orders"}>
+                  Orders
+                </Link>
+              </li>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/admin/users"}>
+                  Users
+                </Link>
+              </li>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/add-product"}>
+                  Add Product
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="dashboard-item"
+                  to={"/dashboard/manage-products"}
+                >
+                  Manage Products
+                </Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/order"}>
+                  My Orders
+                </Link>
+              </li>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/review"}>
+                  My Reviews
+                </Link>
+              </li>
+              <li>
+                <Link className="dashboard-item" to={"/dashboard/add-review"}>
+                  Add Review
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

@@ -3,18 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const messageSlice = createSlice({
   name: "modal",
   initialState: {
-    item: null,
+    data: null,
   },
   reducers: {
     openMessage: (state, action) => {
-      state.item = action.payload;
+      state.data = action.payload;
     },
-    closeMessage: (state) => {
-      state.item = null;
+    closeMessage: (state, action) => {
+      state.data = null;
     },
   },
 });
 
-export const { openMessage, closeMessage } = messageSlice.actions;
+export const { openMessage, closeMessage, completed } = messageSlice.actions;
 
 export default messageSlice.reducer;

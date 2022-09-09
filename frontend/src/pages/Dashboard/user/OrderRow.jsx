@@ -9,28 +9,34 @@ import React from "react";
 const OrderRow = ({ order }) => {
   return (
     <tr>
-      <td class="order-td">
-        <div class="flex items-center">
-          <div class="flex-shrink-0 w-20">
-            <img class="w-full h-full rounded-full" src={order?.image} alt="" />
+      <td className="order-td">
+        <div className="flex items-center">
+          <div className="flex-shrink-0 w-20">
+            <img
+              className="w-full h-full rounded-full"
+              src={order?.image}
+              alt=""
+            />
           </div>
-          <div class="ml-3">
-            <p class="text-primary font-medium text-lg">{order?.productName}</p>
+          <div className="ml-3">
+            <p className="text-primary font-medium text-lg">
+              {order?.productName}
+            </p>
           </div>
         </div>
       </td>
-      <td class="order-td">
-        <p class="text-base font-medium text-tertiary">{order?.qty}</p>
+      <td className="order-td">
+        <p className="text-base font-medium text-tertiary">{order?.qty}</p>
       </td>
-      <td class="order-td">
-        <p class="text-base font-medium text-tertiary">
+      <td className="order-td">
+        <p className="text-base font-medium text-tertiary">
           ${order?.qty * order?.price}
         </p>
-        <p class="text-xs font-medium text-subtitle">
+        <p className="text-xs font-medium text-subtitle">
           Price Single - ${order?.price}
         </p>
       </td>
-      <td class="order-td">
+      <td className="order-td">
         <div className="flex lg:items-center items-start">
           <button className="xicon">
             <FontAwesomeIcon icon={faEye} />

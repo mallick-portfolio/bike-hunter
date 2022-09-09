@@ -13,21 +13,21 @@ const Reviews = () => {
     return <Loading />;
   }
   return (
-    <div class="container">
-      <div class="py-8">
+    <div className="container">
+      <div className="py-8">
         <div>
-          <h2 class="order-title">Reviews</h2>
+          <h2 className="order-title">Reviews</h2>
         </div>
-        <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-          <div class="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
-            <table class="min-w-full leading-normal">
+        <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+          <div className="inline-block min-w-full shadow-md rounded-lg overflow-hidden">
+            <table className="min-w-full leading-normal">
               <thead>
                 <tr>
-                  <th class="order-th">ID</th>
-                  <th class="order-th">Review</th>
-                  <th class="order-th">Rating</th>
-                  <th class="order-th">Action</th>
-                  <th class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
+                  <th className="order-th">ID</th>
+                  <th className="order-th">Review</th>
+                  <th className="order-th">Rating</th>
+                  <th className="order-th">Action</th>
+                  <th className="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"></th>
                 </tr>
               </thead>
               <tbody>

@@ -18,6 +18,7 @@ import {
   Reviews,
   Users,
 } from "./pages/Dashboard/index.js";
+import RequireAdmin from "./pages/login/RequireAdmin.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -54,7 +55,15 @@ const App = () => {
           <Route index path="order" element={<Orders />} />
           <Route index path="add-review" element={<AddReview />} />
           <Route index path="review" element={<Reviews />} />
-          <Route index path="admin/users" element={<Users />} />
+          <Route
+            index
+            path="admin/users"
+            element={
+              <RequireAdmin>
+                <Users />
+              </RequireAdmin>
+            }
+          />
         </Route>
       </Routes>
       {path !== "/login" &&
