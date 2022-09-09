@@ -6,6 +6,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase.js";
 import { signOut } from "firebase/auth";
 import Loading from "./Loading.jsx";
+import avater from "../../assets/images/avater.png";
 import useAdmin from "../../hooks/useAdmin.js";
 const Header = () => {
   const [user, loading] = useAuthState(auth);
@@ -64,11 +65,7 @@ const Header = () => {
                   <li onClick={() => setActive(!active)} className="relative">
                     <img
                       className="userImage"
-                      src={
-                        user?.photoURL
-                          ? user?.photoURL
-                          : "https://placeimg.com/192/192/people"
-                      }
+                      src={user?.photoURL ? user?.photoURL : avater}
                       alt=""
                     />
                     <div
@@ -94,11 +91,7 @@ const Header = () => {
               <button onClick={() => setActive(!active)}>
                 <img
                   className="userImage"
-                  src={
-                    user?.photoURL
-                      ? user?.photoURL
-                      : "https://placeimg.com/192/192/people"
-                  }
+                  src={user?.photoURL ? user?.photoURL : avater}
                   alt=""
                 />
               </button>

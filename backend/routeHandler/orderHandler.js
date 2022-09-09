@@ -5,7 +5,25 @@ const orderSchema = require("../Schema/orderSchema.js");
 const checkLogin = require("../middleware/checkLogin.js");
 const Order = mongoose.model("Order", orderSchema);
 
-router.get("/", async (req, res) => {});
+router.get("/", checkLogin, async (req, res) => {
+  try {
+    const result = await Order.find({});
+    if (result) {
+      res.status(200).json({
+        message: "Request Successfull",
+        data: result,
+      });
+    } else {
+      res.status(201).json({
+        error: "Failed to load Data",
+      });
+    }
+  } catch (err) {
+    res.status(201).json({
+      error: "Failed to load Data",
+    });
+  }
+});
 router.get("/:email", checkLogin, async (req, res) => {
   try {
     const result = await Order.find({ email: req.email });

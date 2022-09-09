@@ -58,7 +58,7 @@ const LatestProduct = ({ title }) => {
             <Loading />
           ) : (
             products?.map((product) => (
-              <SwiperSlide key={product.id}>
+              <SwiperSlide key={product._id}>
                 <ProductCard product={product} />
               </SwiperSlide>
             ))

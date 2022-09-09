@@ -13,6 +13,7 @@ import {
 } from "./pages/index.js";
 import {
   AddReview,
+  AdminOrder,
   Dashboard,
   Orders,
   Reviews,
@@ -61,6 +62,15 @@ const App = () => {
             element={
               <RequireAdmin>
                 <Users />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            index
+            path="admin/orders"
+            element={
+              <RequireAdmin>
+                <AdminOrder />
               </RequireAdmin>
             }
           />
