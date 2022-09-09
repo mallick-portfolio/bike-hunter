@@ -7,3 +7,4 @@ export { default as PrivateRoute } from "./login/PrivateRoute.jsx";
 export { default as PageNotFound } from "./PageNotFound.jsx";
 export { default as Register } from "./login/Register.jsx";
 export { default as Shop } from "./Shop/Shop.jsx";
+export { default as BuyProduct } from "./Shop/BuyProduct.jsx";

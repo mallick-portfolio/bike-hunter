@@ -1,12 +1,16 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { Footer, Header } from "./components/index.js";
-import { Home, Login, PrivateRoute, Register, Shop } from "./pages/index.js";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import BuyProduct from "./pages/Shop/BuyProduct.jsx";
-import { useSelector } from "react-redux";
-import Modal from "./components/Shared/Modal.jsx";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { Footer, Header, AllModal } from "./components/index.js";
+import {
+  Home,
+  Login,
+  PrivateRoute,
+  Register,
+  Shop,
+  BuyProduct,
+} from "./pages/index.js";
 import {
   AddReview,
   Dashboard,
@@ -16,7 +20,6 @@ import {
 } from "./pages/Dashboard/index.js";
 
 const App = () => {
-  const data = useSelector((state) => state.modal);
   const location = useLocation();
   const path = location.pathname;
   return (
@@ -57,7 +60,7 @@ const App = () => {
       {path !== "/login" &&
         path !== "/register" &&
         !path.includes("/dashboard") && <Footer />}
-      {data.item && <Modal item={data.item} />}
+      <AllModal />
     </div>
   );
 };
