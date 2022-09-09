@@ -182,11 +182,6 @@ const usersItem = (
   <>
     <ul className="flex flex-col gap-3">
       <li>
-        <Link className="dashboard-item" to="/dashboard/order">
-          Dashboard
-        </Link>
-      </li>
-      <li>
         <Link className="dashboard-item" to="/dashboard/review">
           My Review
         </Link>
@@ -211,14 +206,25 @@ const adminItem = (
   <>
     <ul className="flex flex-col gap-3">
       <li>
-        <Link className="dashboard-item" to="/dashboard/order">
-          Dashboard
+        <Link className="dashboard-item" to={"/dashboard/admin/users"}>
+          Users
         </Link>
       </li>
-      <li className="dashboard-item">Users</li>
-      <li className="dashboard-item">Orders</li>
-      <li className="dashboard-item">Add Product</li>
-      <li className="dashboard-item">Manage Product</li>
+      <li>
+        <Link className="dashboard-item" to={"/dashboard/admin/orders"}>
+          Orders
+        </Link>
+      </li>
+      <li>
+        <Link className="dashboard-item" to={"/dashboard/admin/add-product"}>
+          Add Product
+        </Link>
+      </li>
+      <li>
+        <Link className="dashboard-item" to={"/dashboard/admin/products"}>
+          Manage Product
+        </Link>
+      </li>
       <li className="common-btn2 mt-3">
         <button onClick={() => signOut(auth)}>Sign Out</button>
       </li>
