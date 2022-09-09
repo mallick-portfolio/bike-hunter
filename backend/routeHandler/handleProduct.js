@@ -89,29 +89,3 @@ router.post("/", checkLogin, async (req, res) => {
   }
 });
 module.exports = router;
-// try {
-//   const findUser = await User.findOne({ email: req.email }).exec();
-//   res.send(req.email);
-//   if (findUser) {
-//     const newProduct = new Product(req.body);
-//     const result = await newProduct.save();
-//     if (result._id) {
-//       res.status(201).json({
-//         message: "Review Successfully",
-//         result,
-//       });
-//     } else {
-//       res.status(409).json({
-//         error: "Failed to Review",
-//       });
-//     }
-//   } else {
-//     res.status(409).json({
-//       error: "Failed to Review",
-//     });
-//   }
-// } catch {
-//   res.status(409).json({
-//     error: "Failed to Add Product",
-//   });
-// }

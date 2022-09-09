@@ -182,6 +182,11 @@ const usersItem = (
   <>
     <ul className="flex flex-col gap-3">
       <li>
+        <Link className="dashboard-item" to="/dashboard/order">
+          My Order
+        </Link>
+      </li>
+      <li>
         <Link className="dashboard-item" to="/dashboard/review">
           My Review
         </Link>

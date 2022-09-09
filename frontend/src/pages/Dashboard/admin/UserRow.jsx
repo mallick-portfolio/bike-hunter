@@ -23,6 +23,22 @@ const UserRow = ({ user }) => {
     );
   };
 
+  const deleteUser = async (user) => {
+    dispatch(
+      openMessage({
+        ...user,
+        message: (
+          <h4 className="text-xl font-medium text-tertiary">
+            Do you want to Delete{" "}
+            <span className="text-primary text-2xl font-semibold">
+              {user?.name}
+            </span>
+          </h4>
+        ),
+      })
+    );
+  };
+
   return (
     <tr>
       <td className="order-td">
@@ -61,7 +77,7 @@ const UserRow = ({ user }) => {
               >
                 Make Admin
               </button>
-              <button className="xicon">
+              <button onClick={() => deleteUser(user)} className="xicon">
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             </>

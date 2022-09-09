@@ -4,6 +4,7 @@ const router = express.Router();
 const userSchema = require("../Schema/userSchema.js");
 const User = mongoose.model("User", userSchema);
 const jwt = require("jsonwebtoken");
+const checkLogin = require("../middleware/checkLogin.js");
 
 router.get("/", async (req, res) => {
   try {
@@ -37,7 +38,6 @@ router.put("/:email", async (req, res) => {
       email: req.params.email,
       role: req.body.role,
       image: "",
-      status: req.body.status,
     };
     let result = await User.findOneAndUpdate(filter, update, {
       new: true,
@@ -62,6 +62,7 @@ router.put("/:email", async (req, res) => {
     });
   }
 });
+
 router.put("/admin/:email", async (req, res) => {
   try {
     const filter = { email: req.params.email };
@@ -86,4 +87,30 @@ router.put("/admin/:email", async (req, res) => {
   }
 });
 
+router.delete("/:id", checkLogin, async (req, res) => {
+  try {
+    const admin = await User.findOne({ email: req.email });
+    if (admin.role === "admin") {
+      const result = await User.findOneAndRemove({ _id: req.params.id });
+      if (result._id) {
+        res.status(202).json({
+          message: "user deleted successsfull",
+          data: result,
+        });
+      } else {
+        res.status(204).json({
+          error: "Failed to delete User",
+        });
+      }
+    } else {
+      res.status(204).json({
+        error: "Forbidden access",
+      });
+    }
+  } catch {
+    res.status(204).json({
+      error: "Forbidden access",
+    });
+  }
+});
 module.exports = router;

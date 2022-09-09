@@ -9,8 +9,7 @@ const useToken = (user, displayName = null) => {
     const currentUser = {
       name: user?.user?.displayName ? user?.user?.displayName : displayName,
       email: email,
-      image: user?.user?.photoURL,
-      role: "user",
+      image: user?.user?.photoURL
     };
     if (email) {
       const loaduser = async () => {
