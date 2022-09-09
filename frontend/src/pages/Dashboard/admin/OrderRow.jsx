@@ -1,8 +1,4 @@
-import {
-  faCreditCard,
-  faEye,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
@@ -38,12 +34,6 @@ const OrderRow = ({ order }) => {
       </td>
       <td className="order-td">
         <div className="flex lg:items-center items-start">
-          <button className="xicon">
-            <FontAwesomeIcon icon={faEye} />
-          </button>
-          <button className="xicon mx-0 lg:mx-3">
-            <FontAwesomeIcon icon={faCreditCard} />
-          </button>
           <button className="xicon">
             <FontAwesomeIcon icon={faTrash} />
           </button>
