@@ -6,15 +6,15 @@ export const deleteSlice = createSlice({
     data: null,
   },
   reducers: {
-    openMessage: (state, action) => {
+    deleteMessage: (state, action) => {
       state.data = action.payload;
     },
-    closeMessage: (state, action) => {
+    closeDelete: (state) => {
       state.data = null;
     },
   },
 });
 
-export const { openMessage, closeMessage } = deleteSlice.actions;
+export const { deleteMessage, closeDelete } = deleteSlice.actions;
 
 export default deleteSlice.reducer;

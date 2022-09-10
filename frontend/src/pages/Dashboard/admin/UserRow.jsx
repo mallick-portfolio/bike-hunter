@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { openMessage } from "../../../feature/slice/messageSlice.js";
 import React from "react";
 import { useDispatch } from "react-redux";
-const UserRow = ({ user }) => {
+const UserRow = ({ user, setItem }) => {
   const dispatch = useDispatch();
   const handleAdmin = async (user) => {
     const userData = { role: "admin" };
@@ -14,22 +14,6 @@ const UserRow = ({ user }) => {
         message: (
           <h4 className="text-xl font-medium text-tertiary">
             Do you want to make admin{" "}
-            <span className="text-primary text-2xl font-semibold">
-              {user?.name}
-            </span>
-          </h4>
-        ),
-      })
-    );
-  };
-
-  const deleteUser = async (user) => {
-    dispatch(
-      openMessage({
-        ...user,
-        message: (
-          <h4 className="text-xl font-medium text-tertiary">
-            Do you want to Delete{" "}
             <span className="text-primary text-2xl font-semibold">
               {user?.name}
             </span>
@@ -77,7 +61,7 @@ const UserRow = ({ user }) => {
               >
                 Make Admin
               </button>
-              <button onClick={() => deleteUser(user)} className="xicon">
+              <button onClick={() => setItem(user)} className="xicon">
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             </>

@@ -3,6 +3,7 @@ import { signOut } from "firebase/auth";
 import axios from "axios";
 import { auth } from "../firebase.js";
 import { useNavigate } from "react-router-dom";
+
 const useData = (url) => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);

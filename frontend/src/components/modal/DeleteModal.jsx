@@ -1,14 +1,12 @@
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { closeMessage } from "../../feature/slice/messageSlice.js";
 import axios from "axios";
 import { toast } from "react-toastify";
-const DeleteModal = ({ data }) => {
-  const dispatch = useDispatch();
+const DeleteModal = ({ item, setItem, message }) => {
+  console.log(item);
   useEffect(() => {
-    if (data.message) {
+    if (item?._id) {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = "0";
     }
@@ -16,10 +14,10 @@ const DeleteModal = ({ data }) => {
       document.body.style.overflow = "unset";
       document.body.style.paddingRight = "0px";
     };
-  }, [data.message]);
+  }, [item?._id]);
 
   const handleDelete = async (id) => {
-    const { status, data: result } = await axios.delete(
+    const { status, item: result } = await axios.delete(
       `http://localhost:5000/users/${id}`,
       {
         headers: {
@@ -33,21 +31,28 @@ const DeleteModal = ({ data }) => {
     } else {
       toast("Failed");
     }
-    dispatch(closeMessage());
   };
 
   return (
     <div className="modal-container">
       <div className="mt-64 md:mt-0">
-        <div className="modal-in">
-          <div className="modal-col">{data.message}</div>
+        <div className=" w-full  p-4 lg:p-8 mx-auto bg-btn border border-primary rounded-2xl">
+          <div className="modal-col">
+            <h4 className="text-xl font-medium">
+              <span>Do you want to delete</span>
+              <br />
+              <span className="text-2xl text-primary font-semibold">
+                {message}!
+              </span>
+            </h4>
+          </div>
           <div className="modal-btn px-4">
-            <button onClick={() => dispatch(closeMessage())}>
+            <button onClick={() => setItem(null)}>
               <FontAwesomeIcon className="xicon" icon={faXmark} />
             </button>
             <button
+              onClick={() => handleDelete(item?._id)}
               className="common-btn"
-              onClick={() => handleDelete(data?._id)}
             >
               Ok
             </button>
