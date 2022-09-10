@@ -2,7 +2,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const ReviewRow = ({ review, index }) => {
+const ReviewRow = ({ review, index, setItem }) => {
   return (
     <tr>
       <td className="order-td">
@@ -24,7 +24,7 @@ const ReviewRow = ({ review, index }) => {
       </td>
       <td className="order-td">
         <div className="flex lg:items-center items-start">
-          <button className="xicon">
+          <button onClick={() => setItem(review)} className="xicon">
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>
