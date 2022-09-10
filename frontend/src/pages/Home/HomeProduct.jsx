@@ -2,7 +2,7 @@ import ProductCard from "../../components/Product/ProductCard.jsx";
 import Loading from "../../components/Shared/Loading";
 import useData from "../../hooks/useData.js";
 const HomeProduct = () => {
-  const url = "https://bike-hunter-mallick-portfolio.vercel.app/products/home";
+  const url = "http://localhost:5000/products/home";
   const { loading, data: products } = useData(url);
   return (
     <div className="homeProduct-container">

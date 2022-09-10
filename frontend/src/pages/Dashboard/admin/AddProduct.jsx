@@ -25,7 +25,7 @@ const AddProduct = () => {
       minQty: Number(data.minQty),
     };
     const { status } = await axios.post(
-      "https://bike-hunter-mallick-portfolio.vercel.app/products",
+      "http://localhost:5000/products",
       newProduct,
       {
         headers: {

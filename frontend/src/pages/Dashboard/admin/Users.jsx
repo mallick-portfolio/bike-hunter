@@ -6,7 +6,7 @@ import UserRow from "./UserRow.jsx";
 
 const Users = () => {
   const [item, setItem] = useState(null);
-  const url = `https://bike-hunter-mallick-portfolio.vercel.app/users`;
+  const url = `http://localhost:5000/users`;
   const { loading: load, data: users, setData } = useData(url);
   const message = `${item?.name}`;
   if (load) {
@@ -47,7 +47,7 @@ const Users = () => {
           item={item}
           message={message}
           setItem={setItem}
-          url={`https://bike-hunter-mallick-portfolio.vercel.app/users/${item?._id}`}
+          url={`http://localhost:5000/users/${item?._id}`}
         />
       )}
     </>
