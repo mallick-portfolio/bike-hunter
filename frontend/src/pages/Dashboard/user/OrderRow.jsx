@@ -29,8 +29,8 @@ const OrderRow = ({ order, setItem }) => {
         <p className="text-base font-medium text-tertiary">{order?.qty}</p>
       </td>
       <td className="order-td">
-        <p className="text-base font-medium text-tertiary">
-          ${order?.qty * order?.price}
+        <p className="text-lg font-medium text-tertiary">
+          Total = ${order?.qty * order?.price}
         </p>
         <p className="text-xs font-medium text-subtitle">
           Price Single - ${order?.price}
