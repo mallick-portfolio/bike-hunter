@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-const DeleteModal = ({ item, setItem, message, setData, updatedData }) => {
+const DeleteModal = ({ item, setItem, message, setData, updatedData, url }) => {
   console.log(item);
   useEffect(() => {
     if (item?._id) {
@@ -17,15 +17,11 @@ const DeleteModal = ({ item, setItem, message, setData, updatedData }) => {
   }, [item?._id]);
 
   const handleDelete = async (id) => {
-    const { status, item: result } = await axios.delete(
-      `http://localhost:5000/users/${id}`,
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    );
-    console.log(result);
+    const { status } = await axios.delete(url, {
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    });
     if (status === 202) {
       const updated = updatedData.filter((d) => d._id !== id);
       setData(updated);

@@ -2,7 +2,7 @@ import { faEdit, faEye, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const ProductRow = ({ product }) => {
+const ProductRow = ({ product, setItem }) => {
   return (
     <tr>
       <td className="order-td">
@@ -40,7 +40,7 @@ const ProductRow = ({ product }) => {
           <button className="xicon mx-0 lg:mx-3">
             <FontAwesomeIcon icon={faEdit} />
           </button>
-          <button className="xicon">
+          <button onClick={() => setItem(product)} className="xicon">
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>

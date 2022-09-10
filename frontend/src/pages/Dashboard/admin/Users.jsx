@@ -47,6 +47,7 @@ const Users = () => {
           item={item}
           message={message}
           setItem={setItem}
+          url={`http://localhost:5000/users/${item?._id}`}
         />
       )}
     </>
