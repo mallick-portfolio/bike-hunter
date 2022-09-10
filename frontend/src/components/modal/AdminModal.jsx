@@ -20,7 +20,7 @@ const AdminModal = ({ data }) => {
 
   const handleDelete = async (email) => {
     const { status } = await axios.put(
-      `http://localhost:5000/users/${email}`,
+      `https://bike-hunter-mallick-portfolio.vercel.app/users/${email}`,
       data.userData,
       {
         headers: {

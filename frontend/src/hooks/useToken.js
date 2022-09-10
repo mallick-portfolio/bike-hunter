@@ -14,7 +14,7 @@ const useToken = (user, displayName = null) => {
     if (email) {
       const loaduser = async () => {
         const { data, status } = await axios.put(
-          `http://localhost:5000/users/${email}`,
+          `https://bike-hunter-mallick-portfolio.vercel.app/users/${email}`,
           currentUser
         );
         if (status === 200) {

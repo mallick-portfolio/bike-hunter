@@ -8,7 +8,7 @@ import ProductCard from "../../components/Product/ProductCard.jsx";
 import Loading from "../../components/Shared/Loading.jsx";
 import useData from "../../hooks/useData.js";
 const LatestProduct = ({ title }) => {
-  const url = "http://localhost:5000/products";
+  const url = "https://bike-hunter-mallick-portfolio.vercel.app/products";
   const { loading, data: products } = useData(url);
   return (
     <div className="section-container">

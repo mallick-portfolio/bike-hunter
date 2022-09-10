@@ -9,7 +9,7 @@ import ReviewRow from "./ReviewRow.jsx";
 const Reviews = () => {
   const [item, setItem] = useState(null);
   const [user, loading] = useAuthState(auth);
-  const url = `http://localhost:5000/reviews/${user?.email}`;
+  const url = `https://bike-hunter-mallick-portfolio.vercel.app/reviews/${user?.email}`;
   const { loading: load, data: reviews, setData } = useData(url);
   const message = `${item?.name} Review`;
   if (loading || load) {
@@ -56,7 +56,7 @@ const Reviews = () => {
           item={item}
           message={message}
           setItem={setItem}
-          url={`http://localhost:5000/reviews/user/${item?._id}`}
+          url={`https://bike-hunter-mallick-portfolio.vercel.app/reviews/user/${item?._id}`}
         />
       )}
     </>
