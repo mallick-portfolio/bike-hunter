@@ -1,10 +1,16 @@
 import React from "react";
 import { CommonBanner } from "../../components/index.js";
 import banner from "../../assets/images/pic2.png";
+import AboutUs from "./AboutUs.jsx";
+import Summary from "../Home/Summary.jsx";
+import Reviews from "../../components/Review/Review.jsx";
 const About = () => {
   return (
     <div>
-      <CommonBanner bannerImg={banner} title="About Page" bread="shop" />
+      <CommonBanner bannerImg={banner} title="About Page" bread="about" />
+      <AboutUs />
+      <Summary />
+      <Reviews />
     </div>
   );
 };

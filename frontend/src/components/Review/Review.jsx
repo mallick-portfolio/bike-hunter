@@ -14,7 +14,10 @@ const Reviews = () => {
   return (
     <section className="container pb-24 lg:pb-28">
       <div className="text-center pb-12">
-        <h2 className="section-title">Customer Review</h2>
+        <h2 className="section-title">Testimonials</h2>
+        <p className="text-base font-medium pt-5">
+          During our work we have accumulated hundreds of positive reviews.
+        </p>
       </div>
       <Swiper
         effect={"coverflow"}
