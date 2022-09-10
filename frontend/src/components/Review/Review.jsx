@@ -11,7 +11,6 @@ import Loading from "../Shared/Loading.jsx";
 const Reviews = () => {
   const url = "http://localhost:5000/reviews";
   const { loading, data: reviews } = useData(url);
-
   return (
     <section className="container pb-24 lg:pb-28">
       <div className="text-center pb-12">

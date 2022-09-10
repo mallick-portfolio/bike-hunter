@@ -58,6 +58,7 @@ const Header = () => {
               ))}
             </ul>
           </div>
+          {/* Mobile Tab Menu */}
           <div className="hidden lg:flex">
             <ul className="flex items-center gap-6">
               {user?.email ? (

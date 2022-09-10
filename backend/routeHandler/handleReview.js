@@ -7,7 +7,7 @@ const Review = mongoose.model("Review", reviewSchema);
 
 router.get("/", async (req, res) => {
   try {
-    const result = await Review.find({ email: req.email });
+    const result = await Review.find({ });
     if (result) {
       res.status(200).json({
         message: "Request Successfull",

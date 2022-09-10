@@ -20,20 +20,28 @@ const AddReview = () => {
     return <Loading />;
   }
   const onSubmit = async (data) => {
-    axios
-      .post("https://car-parts98789.herokuapp.com/reviews", {
+    const { status } = await axios.post(
+      "http://localhost:5000/reviews",
+      {
         des: data.des,
         img: user?.photoURL,
         name: user?.displayName,
         email: user?.email,
         rating,
-      })
-      .then((res) => {
-        if (res.data.acknowledged) {
-          toast("Review Successfully.");
-          navigate("/dashboard/review");
-        }
-      });
+      },
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    );
+    if (status === 201) {
+      toast("Review Added Successfully");
+      navigate("/dashboard/review");
+    } else {
+      toast("Failed to add Review");
+      navigate("/dashboard/add-review");
+    }
   };
   return (
     <div className="container pt-12">
@@ -42,11 +50,11 @@ const AddReview = () => {
         <textarea
           {...register("des", {
             minLength: {
-              value: 80,
+              value: 60,
               message: "Your comment minimum length is 80",
             },
             maxLength: {
-              value: 250,
+              value: 200,
               message: "Your comment maximum length is 250",
             },
           })}
