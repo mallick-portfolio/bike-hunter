@@ -12,6 +12,7 @@ import {
   BuyProduct,
   About,
   PageNotFound,
+  Contact,
 } from "./pages/index.js";
 import {
   AddProduct,
@@ -35,6 +36,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
