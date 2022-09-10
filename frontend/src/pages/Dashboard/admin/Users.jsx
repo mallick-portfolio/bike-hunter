@@ -7,7 +7,7 @@ import UserRow from "./UserRow.jsx";
 const Users = () => {
   const [item, setItem] = useState(null);
   const url = `http://localhost:5000/users`;
-  const { loading: load, data: users } = useData(url);
+  const { loading: load, data: users, setData } = useData(url);
   const message = `${item?.name}`;
   if (load) {
     return <Loading />;
@@ -40,7 +40,15 @@ const Users = () => {
           </div>
         </div>
       </div>
-      {item && <DeleteModal item={item} message={message} setItem={setItem} />}
+      {item && (
+        <DeleteModal
+          setData={setData}
+          updatedData={users}
+          item={item}
+          message={message}
+          setItem={setItem}
+        />
+      )}
     </>
   );
 };

@@ -28,7 +28,7 @@ const useData = (url) => {
     };
     loadProduct();
   }, [navigate, url]);
-  return { loading, data };
+  return { loading, data , setData};
 };
 
 export default useData;

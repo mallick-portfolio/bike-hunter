@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-const DeleteModal = ({ item, setItem, message }) => {
+const DeleteModal = ({ item, setItem, message, setData, updatedData }) => {
   console.log(item);
   useEffect(() => {
     if (item?._id) {
@@ -27,7 +27,10 @@ const DeleteModal = ({ item, setItem, message }) => {
     );
     console.log(result);
     if (status === 202) {
+      const updated = updatedData.filter((d) => d._id !== id);
+      setData(updated);
       toast("Successfully");
+      setItem(null);
     } else {
       toast("Failed");
     }
