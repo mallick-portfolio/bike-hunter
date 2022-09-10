@@ -9,12 +9,12 @@ const useToken = (user, displayName = null) => {
     const currentUser = {
       name: user?.user?.displayName ? user?.user?.displayName : displayName,
       email: email,
-      image: user?.user?.photoURL
+      image: user?.user?.photoURL,
     };
     if (email) {
       const loaduser = async () => {
         const { data, status } = await axios.put(
-          `http://localhost:5000/users/${email}`,
+          `https://bike-hunter-mallick-portfolio.vercel.app/users/${email}`,
           currentUser
         );
         if (status === 200) {

@@ -36,7 +36,7 @@ const ShopForm = ({ product }) => {
       product.minQty <= Number(data.qty)
     ) {
       const { status } = await axios.post(
-        "http://localhost:5000/order",
+        "https://bike-hunter-mallick-portfolio.vercel.app/order",
         order,
         {
           headers: {

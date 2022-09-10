@@ -6,7 +6,7 @@ import OrderRow from "./OrderRow.jsx";
 
 const Orders = () => {
   const [item, setItem] = useState(null);
-  const url = `http://localhost:5000/order`;
+  const url = `https://bike-hunter-mallick-portfolio.vercel.app/order`;
   const { loading: load, data: orders, setData } = useData(url);
   const message = `${item?.productName} Order`;
 
@@ -49,7 +49,7 @@ const Orders = () => {
           item={item}
           message={message}
           setItem={setItem}
-          url={`http://localhost:5000/order/${item?._id}`}
+          url={`https://bike-hunter-mallick-portfolio.vercel.app/order/${item?._id}`}
         />
       )}
     </>

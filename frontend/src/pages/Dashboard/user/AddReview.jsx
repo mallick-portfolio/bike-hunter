@@ -21,7 +21,7 @@ const AddReview = () => {
   }
   const onSubmit = async (data) => {
     const { status } = await axios.post(
-      "http://localhost:5000/reviews",
+      "https://bike-hunter-mallick-portfolio.vercel.app/reviews",
       {
         des: data.des,
         img: user?.photoURL,

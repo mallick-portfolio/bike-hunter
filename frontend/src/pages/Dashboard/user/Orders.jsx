@@ -9,7 +9,7 @@ import OrderRow from "./OrderRow.jsx";
 const Orders = () => {
   const [user, loading] = useAuthState(auth);
   const [item, setItem] = useState(null);
-  const url = `http://localhost:5000/order/${user?.email}`;
+  const url = `https://bike-hunter-mallick-portfolio.vercel.app/order/${user?.email}`;
   const { loading: load, data: orders, setData } = useData(url);
   const message = `${item?.productName} Order`;
   if (loading || load) {
@@ -51,7 +51,7 @@ const Orders = () => {
           item={item}
           message={message}
           setItem={setItem}
-          url={`http://localhost:5000/order/user/${item?._id}`}
+          url={`https://bike-hunter-mallick-portfolio.vercel.app/order/user/${item?._id}`}
         />
       )}
     </>

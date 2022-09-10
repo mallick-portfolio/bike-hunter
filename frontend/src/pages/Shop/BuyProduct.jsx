@@ -8,7 +8,7 @@ import ShopForm from "./ShopForm.jsx";
 
 const BuyProduct = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000/products/${id}`;
+  const url = `https://bike-hunter-mallick-portfolio.vercel.app/products/${id}`;
   const { loading, singleData: product } = useSingleData(url);
   if (loading) {
     return <Loading />;

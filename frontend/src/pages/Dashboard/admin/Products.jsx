@@ -7,7 +7,7 @@ import ProductRow from "./ProductRow.jsx";
 
 const Products = () => {
   const [item, setItem] = useState(null);
-  const url = `http://localhost:5000/products`;
+  const url = `https://bike-hunter-mallick-portfolio.vercel.app/products`;
   const { loading: load, data: products, setData } = useData(url);
   const message = `${item?.name}`;
   if (load) {
@@ -55,7 +55,7 @@ const Products = () => {
           item={item}
           message={message}
           setItem={setItem}
-          url = {`http://localhost:5000/products/${item?._id}`}
+          url={`https://bike-hunter-mallick-portfolio.vercel.app/products/${item?._id}`}
         />
       )}
     </>
