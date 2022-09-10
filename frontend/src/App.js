@@ -11,6 +11,7 @@ import {
   Shop,
   BuyProduct,
   About,
+  PageNotFound,
 } from "./pages/index.js";
 import {
   AddProduct,
@@ -97,6 +98,7 @@ const App = () => {
             }
           />
         </Route>
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
       {path !== "/login" &&
         path !== "/register" &&
