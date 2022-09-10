@@ -6,24 +6,45 @@ const ContactUs = () => {
       <div className="text-center w-full md:w-2/3 mx-auto">
         <h2 className="text-4xl text-tertiary font-bold">About Bike Hunter</h2>
         <p className="text-base font-medium py-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec mattis, pulvinar dapibus leo. Start working with
-          Landrick that can provide everything
+          We would like to answer your questions
         </p>
       </div>
-      <div className="flex gap-8 flex-col lg:flex-row items-center">
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          est reprehenderit odio suscipit neque architecto, quos reiciendis
-          autem repellendus asperiores quaerat dolore tempore nesciunt! Illum
-          saepe explicabo et veniam similique.
-        </div>
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-          est reprehenderit odio suscipit neque architecto, quos reiciendis
-          autem repellendus asperiores quaerat dolore tempore nesciunt! Illum
-          saepe explicabo et veniam similique.
-        </div>
+      <div className="flex flex-col justify-center items-center">
+        <form className="login-form w-full md:w-2/3">
+          <h2 className="form-title">Sign In With</h2>
+          <div className="my-1 lg:my-2">
+            <label className="form-label" htmlFor="">
+              Your Name
+            </label>
+            <input className="form-input" type="text" />
+          </div>
+          <div className="my-1 lg:my-2">
+            <label className="form-label" htmlFor="">
+              Email
+            </label>
+            <input className="form-input" type="email" />
+          </div>
+          <div className="my-1 lg:my-2">
+            <label className="form-label" htmlFor="">
+              Subject
+            </label>
+            <input className="form-input" type="text" />
+          </div>
+          <textarea
+            required
+            rows={4}
+            className="textarea w-full focus:border-primary outline-none rounded-lg pl-4 pt-4"
+            placeholder="Your Message"
+          ></textarea>
+
+          <div className="mt-4 flex items-center justify-center">
+            <input
+              className="common-btn"
+              type="submit"
+              value={"Send Message"}
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
