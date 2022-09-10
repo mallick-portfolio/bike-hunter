@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const OrderRow = ({ order }) => {
+const OrderRow = ({ order, setItem }) => {
   return (
     <tr>
       <td className="order-td">
@@ -44,7 +44,7 @@ const OrderRow = ({ order }) => {
           <button className="xicon mx-0 lg:mx-3">
             <FontAwesomeIcon icon={faCreditCard} />
           </button>
-          <button className="xicon">
+          <button onClick={() => setItem(order)} className="xicon">
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>

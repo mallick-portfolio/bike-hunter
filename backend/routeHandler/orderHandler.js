@@ -97,4 +97,30 @@ router.delete("/:id", checkLogin, async (req, res) => {
     });
   }
 });
+router.delete("/user/:id", checkLogin, async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.email });
+    if (user?.email) {
+      const result = await Order.findOneAndRemove({ _id: req.params.id });
+      if (result._id) {
+        res.status(202).json({
+          message: "user deleted successsfull",
+          data: result,
+        });
+      } else {
+        res.status(204).json({
+          error: "Failed to delete User",
+        });
+      }
+    } else {
+      res.status(204).json({
+        error: "Forbidden access",
+      });
+    }
+  } catch (err) {
+    res.status(204).json({
+      error: "Forbidden access",
+    });
+  }
+});
 module.exports = router;
