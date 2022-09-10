@@ -30,13 +30,12 @@ const ShopForm = ({ product }) => {
       image: product.image,
       price: product.price,
     };
-    console.log(order);
     e.preventDefault();
     if (
       product.avilQty <= Number(data.qty) ||
       product.minQty <= Number(data.qty)
     ) {
-      const { data, status } = await axios.post(
+      const { status } = await axios.post(
         "http://localhost:5000/order",
         order,
         {

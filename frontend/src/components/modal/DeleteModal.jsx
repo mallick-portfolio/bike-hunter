@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 const DeleteModal = ({ item, setItem, message, setData, updatedData, url }) => {
-  console.log(item);
   useEffect(() => {
     if (item?._id) {
       document.body.style.overflow = "hidden";

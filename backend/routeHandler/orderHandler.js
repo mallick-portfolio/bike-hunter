@@ -4,6 +4,8 @@ const router = express.Router();
 const orderSchema = require("../Schema/orderSchema.js");
 const checkLogin = require("../middleware/checkLogin.js");
 const Order = mongoose.model("Order", orderSchema);
+const userSchema = require("../Schema/userSchema.js");
+const User = mongoose.model("User", userSchema);
 
 router.get("/", checkLogin, async (req, res) => {
   try {
@@ -66,6 +68,32 @@ router.post("/", checkLogin, async (req, res) => {
   } catch {
     res.status(409).json({
       error: "Failed to Order",
+    });
+  }
+});
+router.delete("/:id", checkLogin, async (req, res) => {
+  try {
+    const admin = await User.findOne({ email: req.email });
+    if (admin.role === "admin") {
+      const result = await Order.findOneAndRemove({ _id: req.params.id });
+      if (result._id) {
+        res.status(202).json({
+          message: "user deleted successsfull",
+          data: result,
+        });
+      } else {
+        res.status(204).json({
+          error: "Failed to delete User",
+        });
+      }
+    } else {
+      res.status(204).json({
+        error: "Forbidden access",
+      });
+    }
+  } catch (err) {
+    res.status(204).json({
+      error: "Forbidden access",
     });
   }
 });

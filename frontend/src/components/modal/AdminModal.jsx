@@ -19,7 +19,7 @@ const AdminModal = ({ data }) => {
   }, [data.message]);
 
   const handleDelete = async (email) => {
-    const { status, data: result } = await axios.put(
+    const { status } = await axios.put(
       `http://localhost:5000/users/${email}`,
       data.userData,
       {
@@ -28,7 +28,6 @@ const AdminModal = ({ data }) => {
         },
       }
     );
-    console.log(result);
     if (status === 200) {
       toast("Successfully");
     } else {

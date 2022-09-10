@@ -92,7 +92,6 @@ router.delete("/:id", checkLogin, async (req, res) => {
     const admin = await User.findOne({ email: req.email });
     if (admin.role === "admin") {
       const result = await User.findOneAndRemove({ _id: req.params.id });
-      console.log(req.params.id)
       if (result._id) {
         res.status(202).json({
           message: "user deleted successsfull",
