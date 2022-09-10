@@ -1,7 +1,7 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
+import { Link } from "react-router-dom";
 const ReviewRow = ({ review, index, setItem }) => {
   return (
     <tr>
@@ -15,7 +15,7 @@ const ReviewRow = ({ review, index, setItem }) => {
       <td className="order-td">
         <div className="ml-3">
           <p className="text-primary font-medium text-lg">
-            {review?.des.slice(0, 80)}
+            {review?.des.slice(0, 80)}...
           </p>
         </div>
       </td>
@@ -24,8 +24,13 @@ const ReviewRow = ({ review, index, setItem }) => {
       </td>
       <td className="order-td">
         <div className="flex lg:items-center items-start">
-          <button onClick={() => setItem(review)} className="xicon">
-            <FontAwesomeIcon icon={faTrash} />
+          <button>
+            <Link to={`/dashboard/review/${review?._id}`}>
+              <FontAwesomeIcon className="xicon mr-3" icon={faEdit} />
+            </Link>
+          </button>
+          <button onClick={() => setItem(review)}>
+            <FontAwesomeIcon className="xicon" icon={faTrash} />
           </button>
         </div>
       </td>

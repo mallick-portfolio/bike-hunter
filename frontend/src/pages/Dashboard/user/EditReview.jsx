@@ -1,13 +1,17 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import { toast } from "react-toastify";
 import Loading from "../../../components/Shared/Loading.jsx";
 import { auth } from "../../../firebase.js";
-const AddReview = () => {
+import useData from "../../../hooks/useData.js";
+const EditReview = () => {
+  const { id } = useParams();
+  const url = `http://localhost:5000/reviews/${id}`;
+  const { loading: dataLoading, data: review } = useData(url);
   const [user, loading] = useAuthState(auth);
   const [rating, setRating] = useState(0);
   const navigate = useNavigate();
@@ -16,38 +20,41 @@ const AddReview = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  if (loading) {
+
+  if (loading || dataLoading) {
     return <Loading />;
   }
   const onSubmit = async (data) => {
-    const { status } = await axios.post(
-      "http://localhost:5000/reviews",
-      {
-        des: data.des,
-        img: user?.photoURL,
-        name: user?.displayName,
-        email: user?.email,
-        rating,
-      },
-      {
-        headers: {
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    );
-    if (status === 201) {
-      toast("Review Added Successfully");
-      navigate("/dashboard/review");
-    } else {
-      toast("Failed to add Review");
-      navigate("/dashboard/add-review");
-    }
+    console.log(data)
+    // const { status } = await axios.get(
+    //   `http://localhost:5000/reviews/${id}`,
+    //   {
+    //     des: data.des,
+    //     img: user?.photoURL,
+    //     name: user?.displayName,
+    //     email: user?.email,
+    //     rating,
+    //   },
+    //   {
+    //     headers: {
+    //       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    //     },
+    //   }
+    // );
+    // if (status === 201) {
+    //   toast("Review Added Successfully");
+    //   navigate("/dashboard/review");
+    // } else {
+    //   toast("Failed to add Review");
+    //   navigate("/dashboard/add-review");
+    // }
   };
   return (
     <div className="container pt-12">
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <p className="text-xl mb-4">Give your over all rating</p>
         <textarea
+          value={review?.des}
           {...register("des", {
             minLength: {
               value: 60,
@@ -72,7 +79,7 @@ const AddReview = () => {
             isAggregateRating={true}
             isSelectable={true}
             changeRating={(e) => setRating(e)}
-            rating={rating}
+            rating={review?.rating}
             starRatedColor="#ff136f"
             starEmptyColor="#444"
             numberOfStars={5}
@@ -90,4 +97,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
+export default EditReview;
