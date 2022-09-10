@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import { CommonBanner } from "../../components/index.js";
+import banner from "../../assets/images/pic2.png";
 const About = () => {
   return (
     <div>
-      <h1>about page</h1>
+      <CommonBanner bannerImg={banner} title="About Page" bread="shop" />
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

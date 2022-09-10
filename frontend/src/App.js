@@ -10,6 +10,7 @@ import {
   Register,
   Shop,
   BuyProduct,
+  About,
 } from "./pages/index.js";
 import {
   AddProduct,
@@ -32,6 +33,7 @@ const App = () => {
       <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
