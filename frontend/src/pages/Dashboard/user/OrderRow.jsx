@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-const OrderRow = ({ order, setItem }) => {
+const OrderRow = ({ order, setItem, setDetail }) => {
   return (
     <tr>
       <td className="order-td">
@@ -38,7 +38,7 @@ const OrderRow = ({ order, setItem }) => {
       </td>
       <td className="order-td">
         <div className="flex lg:items-center items-start">
-          <button className="xicon">
+          <button onClick={() => setDetail(order)} className="xicon">
             <FontAwesomeIcon icon={faEye} />
           </button>
           <button className="xicon mx-0 lg:mx-3">

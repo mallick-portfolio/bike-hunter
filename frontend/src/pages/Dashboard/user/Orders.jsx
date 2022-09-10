@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import DeleteModal from "../../../components/modal/DeleteModal.jsx";
+import OrderModal from "../../../components/modal/OrderModal.jsx";
 import Loading from "../../../components/Shared/Loading.jsx";
 import { auth } from "../../../firebase.js";
 import useData from "../../../hooks/useData.js";
@@ -9,6 +10,7 @@ import OrderRow from "./OrderRow.jsx";
 const Orders = () => {
   const [user, loading] = useAuthState(auth);
   const [item, setItem] = useState(null);
+  const [detail, setDetail] = useState(null);
   const url = `https://bike-hunter-mallick-portfolio.vercel.app/order/${user?.email}`;
   const { loading: load, data: orders, setData } = useData(url);
   const message = `${item?.productName} Order`;
@@ -36,7 +38,12 @@ const Orders = () => {
                 </thead>
                 <tbody>
                   {orders.map((order) => (
-                    <OrderRow setItem={setItem} key={order._id} order={order} />
+                    <OrderRow
+                      setDetail={setDetail}
+                      setItem={setItem}
+                      key={order._id}
+                      order={order}
+                    />
                   ))}
                 </tbody>
               </table>
@@ -54,6 +61,7 @@ const Orders = () => {
           url={`https://bike-hunter-mallick-portfolio.vercel.app/order/user/${item?._id}`}
         />
       )}
+      {detail && <OrderModal detail={detail} setDetail={setDetail} />}
     </>
   );
 };
